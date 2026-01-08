@@ -178,4 +178,3 @@ if __name__ == "__main__":
         print("pip3 install python-pptx beautifulsoup4")
     except Exception as e:
         print(f"❌ Ошибка: {e}")
-

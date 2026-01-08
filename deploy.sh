@@ -25,4 +25,3 @@ echo ""
 echo "Для автоматического деплоя нужен Netlify CLI:"
 echo "npm install -g netlify-cli"
 echo "netlify deploy --prod --dir=. --file=$FILE"
-
