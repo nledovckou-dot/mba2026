@@ -188,7 +188,7 @@
 
         .hero-slide {
             position: relative;
-            color: #ffffff;
+            color: var(--ink);
         }
 
         .hero-video {
@@ -216,19 +216,19 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(180deg, rgba(13, 23, 55, 0.25) 0%, rgba(13, 23, 55, 0.55) 70%);
+            background: transparent;
             border-radius: 24px;
         }
 
         .hero-overlay .slide-title,
         .hero-overlay .slide-subtitle {
-            color: #ffffff;
-            text-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            color: var(--primary);
+            text-shadow: none;
         }
 
         .hero-overlay .hero-caption {
             font-size: 20px;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(11, 27, 77, 0.8);
             margin-top: 24px;
         }
 
@@ -1576,6 +1576,24 @@
                 <video src="assets/hero_slide1.mp4" autoplay muted loop playsinline></video>
             </div>
             <div class="hero-overlay">
+                <div class="header">
+                    <div class="logo-section">
+                        <div class="logo-circle">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="50" fill="#1a237e"/>
+                                <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <div class="header-text">Программа МВА</div>
+                        <div class="header-divider"></div>
+                        <div class="header-text">Москва 2026</div>
+                    </div>
+                </div>
                 <div class="content" style="justify-content: center; align-items: center; text-align: center;">
                     <div class="slide-title" style="font-size: 56px; margin-bottom: 20px;">B2B ПЛАТФОРМА КОЛЛАБОРАЦИЙ</div>
                     <div class="slide-subtitle" style="font-size: 36px; margin-bottom: 25px;">RiverPlace: природа, размещение, инфраструктура</div>
