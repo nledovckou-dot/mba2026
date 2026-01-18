@@ -189,6 +189,13 @@
             margin-top: 20px;
         }
 
+        .four-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
         .stat-box {
             background: #f5f5f5;
             padding: 20px;
@@ -213,6 +220,106 @@
             color: #4caf50;
             font-weight: 600;
             margin-top: 5px;
+        }
+
+        .compact-list {
+            font-size: 14px;
+            line-height: 1.4;
+            color: #333;
+        }
+
+        .compact-list li {
+            margin-bottom: 6px;
+        }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .partner-column h4 {
+            color: #1a237e;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bar-label {
+            width: 180px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .bar {
+            height: 18px;
+            border-radius: 6px;
+        }
+
+        .bar-value {
+            font-size: 14px;
+            color: #333;
+            min-width: 90px;
+        }
+
+        .line-chart {
+            width: 100%;
+            height: 320px;
+        }
+
+        .chart-legend-inline {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .legend-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .metric-card {
+            background: #f0f7ff;
+            border-left: 4px solid #1a237e;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .metric-title {
+            font-size: 14px;
+            color: #1a237e;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .metric-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a237e;
+        }
+
+        .metric-note {
+            font-size: 12px;
+            color: #666;
+            margin-top: 6px;
         }
 
         .footer {
@@ -599,7 +706,7 @@
                 margin-bottom: 20px;
             }
 
-            .two-columns, .three-columns {
+            .two-columns, .three-columns, .four-columns, .partner-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
                 margin-top: 15px;
@@ -714,6 +821,10 @@
             .chart-container {
                 flex-direction: column;
                 gap: 20px;
+            }
+
+            .bar-label {
+                width: 120px;
             }
 
             .price-comparison {
@@ -1162,7 +1273,7 @@
             </div>
         </div>
 
-        <!-- Slide 10: Body & Performance -->
+        <!-- Slide 10: Partner List (Single Slide) -->
         <div class="slide">
             <div class="header">
                 <div class="logo-section">
@@ -1183,217 +1294,82 @@
                 </div>
             </div>
             <div class="content">
-                <div class="slide-title">СПИСОК ПАРТНЕРОВ: ТЕЛО, ПСИХИКА, ТВОРЧЕСТВО</div>
-                <div class="two-columns">
-                    <ul class="bullet-list">
-                        <li>Gogol School — актерские, телесные практики</li>
-                        <li>Игра пространства — телесный театр, эмоции</li>
-                        <li>Impro Studio — импровизация, контакт</li>
-                        <li>Authentic Movement — телесная осознанность</li>
-                    </ul>
-                    <ul class="bullet-list">
-                        <li>Moscow CI — контактная импровизация</li>
-                        <li>Психодрама-сообщества Москвы</li>
-                        <li>ТОП-сообщества телесных терапевтов</li>
-                        <li>Somatic Experiencing Russia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 11: Yoga & Breath -->
-        <div class="slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
+                <div class="slide-title">СПИСОК ПАРТНЕРОВ (ОБЩИЙ, ~50)</div>
+                <div class="partner-grid">
+                    <div class="partner-column">
+                        <h4>Тело, психика, творчество</h4>
+                        <ul class="bullet-list compact-list">
+                            <li>Gogol School — актерские, телесные практики</li>
+                            <li>Игра пространства — телесный театр, эмоции</li>
+                            <li>Impro Studio — импровизация, контакт</li>
+                            <li>Authentic Movement — телесная осознанность</li>
+                            <li>Moscow CI — контактная импровизация</li>
+                            <li>Психодрама-сообщества Москвы</li>
+                            <li>Телесные терапевты (ТОП-сообщества)</li>
+                            <li>Somatic Experiencing Russia</li>
+                        </ul>
+                        <h4 style="margin-top: 12px;">Йога, дыхание, медитация</h4>
+                        <ul class="bullet-list compact-list">
+                            <li>Holi Yoga — ретриты</li>
+                            <li>Yoga Practika — выездные туры</li>
+                            <li>Ashtanga Moscow Community</li>
+                            <li>Kundalini Yoga Moscow</li>
+                            <li>Breathwork Moscow</li>
+                            <li>Wim Hof Method Moscow</li>
+                            <li>Mindfulness Moscow</li>
+                            <li>Vipassana-сообщества (не центры)</li>
+                            <li>Sound Healing Moscow</li>
+                        </ul>
                     </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
+                    <div class="partner-column">
+                        <h4>Рисование, арт-практики</h4>
+                        <ul class="bullet-list compact-list">
+                            <li>Painty — арт-вечеринки, корпоративы</li>
+                            <li>Draw Up Studio — выездные арт-ивенты</li>
+                            <li>Na Holste — живопись на природе</li>
+                            <li>ZUART — арт-интенсивы</li>
+                            <li>Найди себя — групповое рисование</li>
+                            <li>House of Arts — арт-курсы и выезды</li>
+                            <li>Studio Paspartu — живопись, натура</li>
+                            <li>Kalacheva School (выезды)</li>
+                            <li>Sketching Moscow Community — пленэры</li>
+                            <li>Арт-ретриты независимых художников</li>
+                        </ul>
+                        <h4 style="margin-top: 12px;">Керамика и лепка</h4>
+                        <ul class="bullet-list compact-list">
+                            <li>Гончарная студия №1 (event)</li>
+                            <li>Ceramista — керамика, группы</li>
+                            <li>Anna Ceramica — лепка</li>
+                            <li>VGLINU — терапевтическая лепка</li>
+                            <li>SREDA Studio — керамика + группы</li>
+                            <li>Frenkel Ceramics — авторская керамика</li>
+                            <li>Maleva Studio — керамика + арт</li>
+                            <li>LEMUR Pottery (event)</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">СПИСОК ПАРТНЕРОВ: ЙОГА, ДЫХАНИЕ, МЕДИТАЦИЯ</div>
-                <div class="two-columns">
-                    <ul class="bullet-list">
-                        <li>Holi Yoga — йога, дыхание, ретриты</li>
-                        <li>Yoga Practika — выездные йога-туры</li>
-                        <li>Ashtanga Moscow Community</li>
-                        <li>Kundalini Yoga Moscow</li>
-                        <li>Breathwork Moscow</li>
-                    </ul>
-                    <ul class="bullet-list">
-                        <li>Wim Hof Method Moscow</li>
-                        <li>Mindfulness Moscow</li>
-                        <li>Vipassana-сообщества (не центры)</li>
-                        <li>Sound Healing Moscow</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 12: Art Practices -->
-        <div class="slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
+                    <div class="partner-column">
+                        <h4>Психология, развитие</h4>
+                        <ul class="bullet-list compact-list">
+                            <li>Гештальт-сообщества Москвы</li>
+                            <li>IFS-практики (Internal Family Systems)</li>
+                            <li>Coaching Retreats (частные коучи)</li>
+                            <li>Men’s Circle Moscow</li>
+                            <li>Women’s Circles Moscow</li>
+                            <li>Mindful Leadership (тренеры)</li>
+                            <li>Digital Detox / Silent Retreat</li>
+                            <li>Somatic Yoga Teachers (private)</li>
+                        </ul>
+                        <h4 style="margin-top: 12px;">Гибридные форматы</h4>
+                        <ul class="bullet-list compact-list">
+                            <li>Йога + арт-ретриты (кураторы)</li>
+                            <li>Дыхание + баня + природа</li>
+                            <li>Творческие выходные для IT/корпоратов</li>
+                            <li>Well-being команды (HR-форматы)</li>
+                            <li>Женские self-care ретриты</li>
+                            <li>Slow life / mindful weekend</li>
+                            <li>Авторские ретриты (1–2 ведущих)</li>
+                        </ul>
                     </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">СПИСОК ПАРТНЕРОВ: РИСОВАНИЕ И АРТ-ПРАКТИКИ</div>
-                <div class="two-columns">
-                    <ul class="bullet-list">
-                        <li>Painty — арт-вечеринки, корпоративы</li>
-                        <li>Draw Up Studio — выездные арт-ивенты</li>
-                        <li>Na Holste — живопись на природе</li>
-                        <li>ZUART — арт-интенсивы</li>
-                        <li>Найди себя — групповое рисование</li>
-                    </ul>
-                    <ul class="bullet-list">
-                        <li>House of Arts — арт-курсы и выезды</li>
-                        <li>Studio Paspartu — живопись, натура</li>
-                        <li>Kalacheva School (выезды)</li>
-                        <li>Sketching Moscow Community — пленэры</li>
-                        <li>Арт-ретриты независимых художников</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 13: Ceramics -->
-        <div class="slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">СПИСОК ПАРТНЕРОВ: КЕРАМИКА И ЛЕПКА</div>
-                <div class="two-columns">
-                    <ul class="bullet-list">
-                        <li>Гончарная студия №1 (event)</li>
-                        <li>Ceramista — керамика, группы</li>
-                        <li>Anna Ceramica — лепка</li>
-                        <li>VGLINU — терапевтическая лепка</li>
-                    </ul>
-                    <ul class="bullet-list">
-                        <li>SREDA Studio — керамика + группы</li>
-                        <li>Frenkel Ceramics — авторская керамика</li>
-                        <li>Maleva Studio — керамика + арт</li>
-                        <li>LEMUR Pottery (event)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 14: Psychology & Soft Skills -->
-        <div class="slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">СПИСОК ПАРТНЕРОВ: ПСИХОЛОГИЯ И РАЗВИТИЕ</div>
-                <div class="two-columns">
-                    <ul class="bullet-list">
-                        <li>Гештальт-сообщества Москвы</li>
-                        <li>IFS-практики (Internal Family Systems)</li>
-                        <li>Coaching Retreats (частные коучи)</li>
-                        <li>Men’s Circle Moscow</li>
-                    </ul>
-                    <ul class="bullet-list">
-                        <li>Women’s Circles Moscow</li>
-                        <li>Mindful Leadership (тренеры)</li>
-                        <li>Digital Detox / Silent Retreat</li>
-                        <li>Somatic Yoga Teachers (private)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 15: Hybrid Formats -->
-        <div class="slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">СПИСОК ПАРТНЕРОВ: ГИБРИДНЫЕ ФОРМАТЫ</div>
-                <div class="two-columns">
-                    <ul class="bullet-list">
-                        <li>Йога + арт-ретриты (кураторы)</li>
-                        <li>Дыхание + баня + природа</li>
-                        <li>Творческие выходные для IT/корпоратов</li>
-                        <li>Well-being команды (HR-форматы)</li>
-                    </ul>
-                    <ul class="bullet-list">
-                        <li>Женские self-care ретриты</li>
-                        <li>Slow life / mindful weekend</li>
-                        <li>Авторские ретриты (1–2 ведущих)</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -1445,12 +1421,245 @@
                 </div>
             </div>
         </div>
+
+        <!-- Slide 11: Financial Assumptions -->
+        <div class="slide">
+            <div class="header">
+                <div class="logo-section">
+                    <div class="logo-circle">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
+                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-text">Программа МВА</div>
+                    <div class="header-divider"></div>
+                    <div class="header-text">Москва 2026</div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="slide-title">ФИНАНСОВАЯ МОДЕЛЬ: ПРЕДПОСЫЛКИ</div>
+                <div class="four-columns">
+                    <div class="metric-card">
+                        <div class="metric-title">Вместимость</div>
+                        <div class="metric-number">20 мест</div>
+                        <div class="metric-note">Постоянная база размещения</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Средний чек</div>
+                        <div class="metric-number">7 500 руб</div>
+                        <div class="metric-note">За человека/ночь</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Загрузка</div>
+                        <div class="metric-number">55%</div>
+                        <div class="metric-note">Среднегодовая</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Доп. услуги</div>
+                        <div class="metric-number">+20%</div>
+                        <div class="metric-note">К выручке проживания</div>
+                    </div>
+                </div>
+                <div class="two-columns" style="margin-top: 20px;">
+                    <div class="section">
+                        <div class="section-title">Инвестиции и OPEX</div>
+                        <ul class="bullet-list">
+                            <li>Capex: 60 млн руб. (земля, домики, инфраструктура)</li>
+                            <li>OPEX: 68% выручки (персонал, содержание, маркетинг)</li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <div class="section-title">Формула выручки</div>
+                        <ul class="bullet-list">
+                            <li>20 × 365 × 55% = 4 015 ночей</li>
+                            <li>4 015 × 7 500 = 30,1 млн руб.</li>
+                            <li>Доп. услуги +20% = 36,1 млн руб./год</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Revenue, EBITDA, ROI by Years -->
+        <div class="slide">
+            <div class="header">
+                <div class="logo-section">
+                    <div class="logo-circle">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
+                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-text">Программа МВА</div>
+                    <div class="header-divider"></div>
+                    <div class="header-text">Москва 2026</div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="slide-title">МОНЕТИЗАЦИЯ ПО ГОДАМ: ВЫРУЧКА, EBITDA, ROI</div>
+                <svg class="line-chart" viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Axes -->
+                    <line x1="90" y1="40" x2="90" y2="260" stroke="#cfd8dc" stroke-width="2"/>
+                    <line x1="90" y1="260" x2="700" y2="260" stroke="#cfd8dc" stroke-width="2"/>
+                    <!-- Grid -->
+                    <line x1="90" y1="216" x2="700" y2="216" stroke="#e0e0e0" stroke-dasharray="4 4"/>
+                    <line x1="90" y1="172" x2="700" y2="172" stroke="#e0e0e0" stroke-dasharray="4 4"/>
+                    <line x1="90" y1="128" x2="700" y2="128" stroke="#e0e0e0" stroke-dasharray="4 4"/>
+                    <line x1="90" y1="84" x2="700" y2="84" stroke="#e0e0e0" stroke-dasharray="4 4"/>
+                    <!-- Left axis labels (млн руб.) -->
+                    <text x="50" y="264" font-size="12" fill="#666">0</text>
+                    <text x="42" y="220" font-size="12" fill="#666">10</text>
+                    <text x="42" y="176" font-size="12" fill="#666">20</text>
+                    <text x="42" y="132" font-size="12" fill="#666">30</text>
+                    <text x="42" y="88" font-size="12" fill="#666">40</text>
+                    <text x="42" y="44" font-size="12" fill="#666">50</text>
+                    <!-- Right axis labels (ROI %) -->
+                    <text x="712" y="264" font-size="12" fill="#666">0%</text>
+                    <text x="708" y="220" font-size="12" fill="#666">25%</text>
+                    <text x="708" y="176" font-size="12" fill="#666">50%</text>
+                    <text x="708" y="132" font-size="12" fill="#666">75%</text>
+                    <text x="704" y="88" font-size="12" fill="#666">100%</text>
+                    <text x="704" y="44" font-size="12" fill="#666">120%</text>
+                    <!-- X axis labels -->
+                    <text x="110" y="286" font-size="12" fill="#666">Год 1</text>
+                    <text x="245" y="286" font-size="12" fill="#666">Год 2</text>
+                    <text x="380" y="286" font-size="12" fill="#666">Год 3</text>
+                    <text x="515" y="286" font-size="12" fill="#666">Год 4</text>
+                    <text x="650" y="286" font-size="12" fill="#666">Год 5</text>
+                    <!-- Revenue line (млн руб.) -->
+                    <polyline fill="none" stroke="#1a237e" stroke-width="3"
+                        points="120,101 255,88 390,75 525,62 660,49"/>
+                    <circle cx="120" cy="101" r="4" fill="#1a237e"/>
+                    <circle cx="255" cy="88" r="4" fill="#1a237e"/>
+                    <circle cx="390" cy="75" r="4" fill="#1a237e"/>
+                    <circle cx="525" cy="62" r="4" fill="#1a237e"/>
+                    <circle cx="660" cy="49" r="4" fill="#1a237e"/>
+                    <!-- EBITDA line (млн руб.) -->
+                    <polyline fill="none" stroke="#42a5f5" stroke-width="3"
+                        points="120,209 255,205 390,201 525,197 660,192"/>
+                    <circle cx="120" cy="209" r="4" fill="#42a5f5"/>
+                    <circle cx="255" cy="205" r="4" fill="#42a5f5"/>
+                    <circle cx="390" cy="201" r="4" fill="#42a5f5"/>
+                    <circle cx="525" cy="197" r="4" fill="#42a5f5"/>
+                    <circle cx="660" cy="192" r="4" fill="#42a5f5"/>
+                    <!-- ROI line (cumulative, %) -->
+                    <polyline fill="none" stroke="#ff9800" stroke-width="3"
+                        points="120,225 255,187 390,146 525,102 660,58"/>
+                    <circle cx="120" cy="225" r="4" fill="#ff9800"/>
+                    <circle cx="255" cy="187" r="4" fill="#ff9800"/>
+                    <circle cx="390" cy="146" r="4" fill="#ff9800"/>
+                    <circle cx="525" cy="102" r="4" fill="#ff9800"/>
+                    <circle cx="660" cy="58" r="4" fill="#ff9800"/>
+                </svg>
+                <div class="chart-legend-inline">
+                    <div><span class="legend-dot" style="background:#1a237e;"></span>Выручка, млн руб.</div>
+                    <div><span class="legend-dot" style="background:#42a5f5;"></span>EBITDA, млн руб.</div>
+                    <div><span class="legend-dot" style="background:#ff9800;"></span>Возврат инвестиций (ROI), %</div>
+                </div>
+                <div class="highlight-box" style="margin-top: 14px;">
+                    <p><strong>Пояснение:</strong> рост выручки и EBITDA за счет стабильного B2B‑календаря; ROI — накопительный возврат инвестиций.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Payback & Profitability -->
+        <div class="slide">
+            <div class="header">
+                <div class="logo-section">
+                    <div class="logo-circle">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
+                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-text">Программа МВА</div>
+                    <div class="header-divider"></div>
+                    <div class="header-text">Москва 2026</div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="slide-title">ОКУПАЕМОСТЬ И ДОХОДНОСТЬ</div>
+                <div class="four-columns">
+                    <div class="metric-card">
+                        <div class="metric-title">EBITDA</div>
+                        <div class="metric-number">11,6 млн</div>
+                        <div class="metric-note">В год, базовый сценарий</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">EBITDA %</div>
+                        <div class="metric-number">32%</div>
+                        <div class="metric-note">Маржинальность</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">Payback</div>
+                        <div class="metric-number">5,2 года</div>
+                        <div class="metric-note">60 млн / 11,6 млн</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-title">ROI (EBITDA)</div>
+                        <div class="metric-number">19%</div>
+                        <div class="metric-note">EBITDA / Capex</div>
+                    </div>
+                </div>
+                <div class="key-point" style="margin-top: 20px;">
+                    <strong>Чувствительность:</strong> при росте загрузки до 65% EBITDA ≈ 13,7 млн, окупаемость ≈ 4,4 года.
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Final Conclusions -->
+        <div class="slide">
+            <div class="header">
+                <div class="logo-section">
+                    <div class="logo-circle">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
+                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-text">Программа МВА</div>
+                    <div class="header-divider"></div>
+                    <div class="header-text">Москва 2026</div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="slide-title">ИТОГОВЫЕ ВЫВОДЫ</div>
+                <ul class="bullet-list">
+                    <li><strong>Анализ рынка:</strong> высокая сезонность и перегрев B2C требуют устойчивой B2B‑загрузки</li>
+                    <li><strong>Концепция:</strong> платформа коллабораций с партнерами без собственной базы</li>
+                    <li><strong>Финансовые показатели:</strong> выручка 36,1 млн руб./год при загрузке 55%</li>
+                    <li><strong>Окупаемость:</strong> 5,2 года в базовом сценарии</li>
+                    <li><strong>EBITDA %:</strong> 32% (≈ 11,6 млн руб./год)</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="slide-counter">
-        <span id="current-slide">1</span> / 16
+        <span id="current-slide">1</span> / 15
     </div>
-    <!-- Updated: 2026-01-18 - Концепция B2B-платформы и 16 слайдов -->
+    <!-- Updated: 2026-01-18 - Партнеры на одном слайде и финмодель -->
 
     <div class="navigation">
         <button class="nav-btn" id="prev-btn" onclick="changeSlide(-1)">← Назад</button>
