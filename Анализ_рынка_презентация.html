@@ -90,6 +90,54 @@
             z-index: 1;
         }
 
+        .model-3d {
+            position: absolute;
+            right: 80px;
+            top: 120px;
+            width: 180px;
+            height: 180px;
+            border-radius: 32px;
+            transform-style: preserve-3d;
+            transform: perspective(800px) rotateY(-18deg) rotateX(12deg);
+            background: radial-gradient(circle at 30% 30%, #ffffff 0%, #c5d3ff 35%, #6f86ff 70%, #3f51b5 100%);
+            box-shadow:
+                0 30px 60px rgba(26, 35, 126, 0.25),
+                inset 0 0 30px rgba(255, 255, 255, 0.5);
+            opacity: 0.85;
+            pointer-events: none;
+            z-index: 0 !important;
+            animation: float3d 8s ease-in-out infinite;
+        }
+
+        .model-3d::after {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            border-radius: 26px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,255,255,0.1));
+            transform: translateZ(30px);
+        }
+
+        .model-3d.cube {
+            background: linear-gradient(135deg, #e3e9ff 0%, #8fa3ff 45%, #4b5bd4 100%);
+        }
+
+        .model-3d.small {
+            width: 140px;
+            height: 140px;
+            right: 90px;
+            top: 140px;
+        }
+
+        @keyframes float3d {
+            0%, 100% {
+                transform: perspective(800px) rotateY(-18deg) rotateX(12deg) translateY(0);
+            }
+            50% {
+                transform: perspective(800px) rotateY(-12deg) rotateX(10deg) translateY(-8px);
+            }
+        }
+
         /* Header with logo */
         .header {
             display: flex;
@@ -1040,6 +1088,7 @@
     <div class="presentation-container">
         <!-- Slide 1: Title -->
         <div class="slide active">
+            <div class="model-3d" aria-hidden="true"></div>
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -1070,6 +1119,7 @@
 
         <!-- Slide 2: Market Problem -->
         <div class="slide">
+            <div class="model-3d cube small" aria-hidden="true"></div>
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
