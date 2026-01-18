@@ -478,54 +478,28 @@
             color: #333;
         }
 
-        .hse-glow {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 220px;
-            height: 220px;
-            border-radius: 60px;
-            transform: translate(-50%, -50%) rotate(6deg);
-            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95) 0%, rgba(182, 198, 255, 0.7) 45%, rgba(92, 107, 192, 0.9) 80%);
-            box-shadow:
-                0 0 60px rgba(92, 107, 192, 0.45),
-                0 0 120px rgba(92, 107, 192, 0.35);
-            opacity: 0.7;
-            pointer-events: none;
-            z-index: 0;
-            animation: glowPulse 7s ease-in-out infinite;
+        .hse-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #1a237e;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            box-shadow: 0 10px 20px rgba(26, 35, 126, 0.25);
         }
 
-        .hse-glow::before {
-            content: "";
-            position: absolute;
-            inset: 18px;
-            border-radius: 46px;
-            background: rgba(255, 255, 255, 0.35);
-            box-shadow: inset 0 10px 24px rgba(255, 255, 255, 0.35);
-        }
-
-        .hse-glow span {
+        .hse-mark {
             position: absolute;
             inset: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 56px;
-            color: #1a237e;
-            text-shadow: 0 6px 18px rgba(26, 35, 126, 0.35);
-        }
-
-        @keyframes glowPulse {
-            0%, 100% {
-                transform: translate(-50%, -50%) scale(1) rotate(6deg);
-                opacity: 0.68;
-            }
-            50% {
-                transform: translate(-50%, -50%) scale(1.06) rotate(2deg);
-                opacity: 0.9;
-            }
+            transform: translateZ(40px);
+            z-index: 1;
         }
 
         .bar {
@@ -544,6 +518,124 @@
             height: 380px;
         }
 
+        .timeline-wrap {
+            position: relative;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            padding: 16px 20px 20px;
+            box-shadow: var(--soft-shadow);
+            border: 1px solid rgba(26, 35, 126, 0.08);
+        }
+
+        .timeline-chart {
+            width: 100%;
+            height: 430px;
+        }
+
+        .timeline-chart .line {
+            stroke-width: 4;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+        }
+
+        .timeline-chart.animate .line {
+            animation: drawLine 10s ease forwards;
+        }
+
+        .timeline-chart .chart-point {
+            opacity: 0;
+            transform: scale(0.6);
+        }
+
+        .timeline-chart.animate .chart-point {
+            animation: popIn 0.5s ease forwards;
+        }
+
+        .timeline-chart .chart-label {
+            font-size: 14px;
+            fill: #1a237e;
+            font-weight: 600;
+            opacity: 0;
+        }
+
+        .timeline-chart.animate .chart-label {
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 1.2s;
+        }
+
+        .timeline-legend {
+            display: flex;
+            gap: 18px;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .timeline-legend span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .payback-burst {
+            position: absolute;
+            right: 80px;
+            top: 70px;
+            width: 80px;
+            height: 80px;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .timeline-chart.animate + .payback-burst {
+            animation: burst 1.4s ease forwards;
+            animation-delay: 9.2s;
+        }
+
+        .payback-burst span {
+            position: absolute;
+            width: 10px;
+            height: 22px;
+            background: linear-gradient(180deg, #ffb74d, #ff7043);
+            border-radius: 6px;
+            top: 29px;
+            left: 35px;
+            transform-origin: center bottom;
+        }
+
+        .payback-burst span:nth-child(1) { transform: rotate(0deg) translateY(-28px); }
+        .payback-burst span:nth-child(2) { transform: rotate(45deg) translateY(-28px); }
+        .payback-burst span:nth-child(3) { transform: rotate(90deg) translateY(-28px); }
+        .payback-burst span:nth-child(4) { transform: rotate(135deg) translateY(-28px); }
+        .payback-burst span:nth-child(5) { transform: rotate(180deg) translateY(-28px); }
+        .payback-burst span:nth-child(6) { transform: rotate(225deg) translateY(-28px); }
+        .payback-burst span:nth-child(7) { transform: rotate(270deg) translateY(-28px); }
+        .payback-burst span:nth-child(8) { transform: rotate(315deg) translateY(-28px); }
+
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.6); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes burst {
+            0% { opacity: 0; transform: scale(0.6); }
+            40% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0; transform: scale(1.2); }
+        }
+
         .chart-legend-inline {
             display: flex;
             gap: 20px;
@@ -558,6 +650,43 @@
             height: 12px;
             border-radius: 50%;
             margin-right: 6px;
+        }
+
+        .hse-badge {
+            position: absolute;
+            top: 22px;
+            right: 26px;
+            width: 72px;
+            height: 72px;
+            border-radius: 22px;
+            background: linear-gradient(145deg, #c8d3ff 0%, #7b8dff 100%);
+            box-shadow: 0 16px 35px rgba(30, 43, 120, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            animation: badgeFloat 6s ease-in-out infinite;
+        }
+
+        .hse-badge::before {
+            content: "";
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.45);
+            box-shadow: inset 0 8px 16px rgba(255, 255, 255, 0.4);
+            z-index: 0;
+        }
+
+        .hse-badge .hse-circle {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes badgeFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
         }
 
         .hero-scene {
@@ -1244,14 +1373,24 @@
                 padding: 8px 6px;
             }
 
-        .hse-glow {
-            width: 160px;
-            height: 160px;
-            border-radius: 46px;
+        .hse-badge {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            top: 16px;
+            right: 16px;
         }
 
-        .hse-glow span {
-            font-size: 38px;
+        .hse-badge::before {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+        }
+
+        .hse-badge .hse-circle {
+            width: 34px;
+            height: 34px;
+            font-size: 15px;
         }
 
         .hero-scene {
@@ -1312,6 +1451,11 @@
     <div class="presentation-container">
         <!-- Slide 1: Title -->
         <div class="slide active">
+            <div class="model-3d" aria-hidden="true">
+                <div class="hse-mark">
+                    <div class="hse-circle">В</div>
+                </div>
+            </div>
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -1342,6 +1486,11 @@
 
         <!-- Slide 2: Market Problem -->
         <div class="slide">
+            <div class="model-3d cube small" aria-hidden="true">
+                <div class="hse-mark">
+                    <div class="hse-circle">В</div>
+                </div>
+            </div>
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -2048,30 +2197,93 @@
             </div>
             <div class="content">
                 <div class="slide-title">ОКУПАЕМОСТЬ И ДОХОДНОСТЬ</div>
-                <div class="four-columns">
-                    <div class="metric-card">
-                        <div class="metric-title">EBITDA</div>
-                        <div class="metric-number">11,6 млн</div>
-                        <div class="metric-note">В год, базовый сценарий</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">EBITDA %</div>
-                        <div class="metric-number">32%</div>
-                        <div class="metric-note">Маржинальность</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">Payback</div>
-                        <div class="metric-number">5,2 года</div>
-                        <div class="metric-note">60 млн / 11,6 млн</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">ROI (EBITDA)</div>
-                        <div class="metric-number">19%</div>
-                        <div class="metric-note">EBITDA / Capex</div>
+                <div class="timeline-wrap">
+                    <svg class="timeline-chart" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" aria-label="График выручки, доходности и окупаемости по годам">
+                        <!-- axes -->
+                        <line x1="80" y1="40" x2="80" y2="340" stroke="#cfd8dc" stroke-width="2"/>
+                        <line x1="80" y1="340" x2="820" y2="340" stroke="#cfd8dc" stroke-width="2"/>
+                        <!-- grid -->
+                        <line x1="80" y1="280" x2="820" y2="280" stroke="#e5e7eb" stroke-dasharray="4 4"/>
+                        <line x1="80" y1="220" x2="820" y2="220" stroke="#e5e7eb" stroke-dasharray="4 4"/>
+                        <line x1="80" y1="160" x2="820" y2="160" stroke="#e5e7eb" stroke-dasharray="4 4"/>
+                        <line x1="80" y1="100" x2="820" y2="100" stroke="#e5e7eb" stroke-dasharray="4 4"/>
+                        <!-- left labels -->
+                        <text x="34" y="344" font-size="12" fill="#667">0</text>
+                        <text x="28" y="284" font-size="12" fill="#667">10</text>
+                        <text x="28" y="224" font-size="12" fill="#667">20</text>
+                        <text x="28" y="164" font-size="12" fill="#667">30</text>
+                        <text x="28" y="104" font-size="12" fill="#667">40</text>
+                        <!-- right labels -->
+                        <text x="832" y="344" font-size="12" fill="#667">0%</text>
+                        <text x="828" y="284" font-size="12" fill="#667">25%</text>
+                        <text x="828" y="224" font-size="12" fill="#667">50%</text>
+                        <text x="828" y="164" font-size="12" fill="#667">75%</text>
+                        <text x="824" y="104" font-size="12" fill="#667">100%</text>
+                        <!-- x labels -->
+                        <text x="110" y="372" font-size="12" fill="#667">Год 1</text>
+                        <text x="270" y="372" font-size="12" fill="#667">Год 2</text>
+                        <text x="430" y="372" font-size="12" fill="#667">Год 3</text>
+                        <text x="590" y="372" font-size="12" fill="#667">Год 4</text>
+                        <text x="750" y="372" font-size="12" fill="#667">Год 5</text>
+
+                        <!-- Revenue line (млн руб.) -->
+                        <polyline class="line" pathLength="100" stroke="#1a237e"
+                            points="120,190 280,175 440,160 600,145 760,130"/>
+                        <circle class="chart-point" cx="120" cy="190" r="6" fill="#1a237e" style="animation-delay: 1.4s;">
+                            <title>Год 1: выручка 30 млн</title>
+                        </circle>
+                        <circle class="chart-point" cx="280" cy="175" r="6" fill="#1a237e" style="animation-delay: 3s;">
+                            <title>Год 2: выручка 33 млн</title>
+                        </circle>
+                        <circle class="chart-point" cx="440" cy="160" r="6" fill="#1a237e" style="animation-delay: 4.6s;">
+                            <title>Год 3: выручка 36 млн</title>
+                        </circle>
+                        <circle class="chart-point" cx="600" cy="145" r="6" fill="#1a237e" style="animation-delay: 6.2s;">
+                            <title>Год 4: выручка 39 млн</title>
+                        </circle>
+                        <circle class="chart-point" cx="760" cy="130" r="6" fill="#1a237e" style="animation-delay: 7.8s;">
+                            <title>Год 5: выручка 42 млн</title>
+                        </circle>
+
+                        <!-- EBITDA margin line (%) -->
+                        <polyline class="line" pathLength="100" stroke="#42a5f5"
+                            points="120,295 280,288 440,280 600,272 760,265"/>
+                        <circle class="chart-point" cx="120" cy="295" r="6" fill="#42a5f5" style="animation-delay: 1.8s;">
+                            <title>Год 1: EBITDA 28%</title>
+                        </circle>
+                        <circle class="chart-point" cx="280" cy="288" r="6" fill="#42a5f5" style="animation-delay: 3.4s;">
+                            <title>Год 2: EBITDA 30%</title>
+                        </circle>
+                        <circle class="chart-point" cx="440" cy="280" r="6" fill="#42a5f5" style="animation-delay: 5s;">
+                            <title>Год 3: EBITDA 32%</title>
+                        </circle>
+                        <circle class="chart-point" cx="600" cy="272" r="6" fill="#42a5f5" style="animation-delay: 6.6s;">
+                            <title>Год 4: EBITDA 34%</title>
+                        </circle>
+                        <circle class="chart-point" cx="760" cy="265" r="6" fill="#42a5f5" style="animation-delay: 8.2s;">
+                            <title>Год 5: EBITDA 35%</title>
+                        </circle>
+
+                        <!-- ROI cumulative line (%) -->
+                        <polyline class="line" pathLength="100" stroke="#ff9800"
+                            points="120,310 280,265 440,220 600,175 760,130"/>
+                        <circle class="chart-point" cx="600" cy="175" r="7" fill="#ff9800" style="animation-delay: 7.2s;">
+                            <title>Точка окупаемости: 4,7 год</title>
+                        </circle>
+
+                        <text class="chart-label" x="610" y="155">ОКУПАЕМОСТЬ ~4,7 ГОДА</text>
+                        <text class="chart-label" x="640" y="120">ROI 115% (Год 5)</text>
+                        <text class="chart-label" x="620" y="140">Выручка 42 млн</text>
+                    </svg>
+                    <div class="payback-burst" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
                     </div>
                 </div>
-                <div class="key-point" style="margin-top: 20px;">
-                    <strong>Чувствительность:</strong> при росте загрузки до 65% EBITDA ≈ 13,7 млн, окупаемость ≈ 4,4 года.
+                <div class="timeline-legend">
+                    <span><i class="timeline-dot" style="background:#1a237e;"></i>Выручка, млн руб.</span>
+                    <span><i class="timeline-dot" style="background:#42a5f5;"></i>EBITDA %, маржа</span>
+                    <span><i class="timeline-dot" style="background:#ff9800;"></i>ROI, накопленный</span>
                 </div>
             </div>
         </div>
@@ -2171,6 +2383,16 @@
             slides.forEach(slide => slide.classList.remove('active'));
             slides[currentSlide].classList.add('active');
 
+            // Trigger timeline animation on slide 13
+            document.querySelectorAll('.timeline-chart').forEach(chart => {
+                chart.classList.remove('animate');
+                void chart.offsetWidth;
+            });
+            const timeline = slides[currentSlide].querySelector('.timeline-chart');
+            if (timeline) {
+                timeline.classList.add('animate');
+            }
+
             // Reset scroll for new slide content
             slides[currentSlide].scrollTop = 0;
             const contentEl = slides[currentSlide].querySelector('.content');
@@ -2193,13 +2415,13 @@
             if (e.key === 'ArrowRight') changeSlide(1);
         });
 
-        // Inject HSE photon logo into every slide
+        // Inject HSE badge into every slide
         slides.forEach(slide => {
-            if (!slide.querySelector('.hse-glow')) {
-                const glow = document.createElement('div');
-                glow.className = 'hse-glow';
-                glow.innerHTML = '<span>В</span>';
-                slide.appendChild(glow);
+            if (!slide.querySelector('.hse-badge')) {
+                const badge = document.createElement('div');
+                badge.className = 'hse-badge';
+                badge.innerHTML = '<div class="hse-circle">В</div>';
+                slide.appendChild(badge);
             }
         });
 
