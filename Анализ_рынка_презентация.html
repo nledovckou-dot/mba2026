@@ -506,6 +506,172 @@
             margin-right: 6px;
         }
 
+        .hse-badge {
+            position: absolute;
+            top: 22px;
+            right: 26px;
+            width: 72px;
+            height: 72px;
+            border-radius: 22px;
+            background: linear-gradient(145deg, #c8d3ff 0%, #7b8dff 100%);
+            box-shadow: 0 16px 35px rgba(30, 43, 120, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            animation: badgeFloat 6s ease-in-out infinite;
+        }
+
+        .hse-badge::before {
+            content: "";
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.45);
+            box-shadow: inset 0 8px 16px rgba(255, 255, 255, 0.4);
+        }
+
+        .hse-badge span {
+            position: relative;
+            font-weight: 700;
+            font-size: 16px;
+            color: #1a237e;
+            letter-spacing: 0.6px;
+        }
+
+        @keyframes badgeFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .hero-scene {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 26px;
+            overflow: hidden;
+            background: linear-gradient(180deg, #cfe3ff 0%, #eef4ff 55%, #ffffff 100%);
+            box-shadow: var(--soft-shadow);
+        }
+
+        .scene-sun {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            top: 30px;
+            right: 80px;
+            background: radial-gradient(circle, #fff7cc 0%, #ffd27d 60%, rgba(255, 210, 125, 0) 70%);
+            filter: blur(1px);
+            animation: sunGlow 8s ease-in-out infinite;
+        }
+
+        .scene-hills {
+            position: absolute;
+            width: 140%;
+            height: 55%;
+            left: -20%;
+            bottom: 18%;
+            background: radial-gradient(circle at 30% 60%, #6cae75 0%, #4c8c5a 45%, #3a6d49 75%);
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+
+        .scene-forest {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 26%;
+            height: 80px;
+            background: repeating-linear-gradient(90deg, #2f5f3d 0 18px, #3a7a4b 18px 36px);
+            opacity: 0.65;
+        }
+
+        .scene-river {
+            position: absolute;
+            left: -10%;
+            right: -10%;
+            bottom: 0;
+            height: 35%;
+            background: linear-gradient(120deg, #7bb6ff 0%, #4a86ff 45%, #2d5bce 100%);
+            clip-path: polygon(0 40%, 20% 25%, 45% 30%, 70% 20%, 100% 35%, 100% 100%, 0 100%);
+            animation: riverFlow 12s ease-in-out infinite;
+        }
+
+        .scene-tent {
+            position: absolute;
+            bottom: 22%;
+            left: 18%;
+            width: 180px;
+            height: 120px;
+            background: linear-gradient(135deg, #ffffff 0%, #e1e6ff 100%);
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            box-shadow: 0 20px 35px rgba(20, 30, 80, 0.18);
+        }
+
+        .scene-tent::after {
+            content: "";
+            position: absolute;
+            left: 55%;
+            bottom: 0;
+            width: 60px;
+            height: 60px;
+            background: rgba(26, 35, 126, 0.12);
+            clip-path: polygon(0 0, 100% 100%, 0% 100%);
+        }
+
+        .scene-lodge {
+            position: absolute;
+            bottom: 24%;
+            left: 50%;
+            width: 220px;
+            height: 90px;
+            background: linear-gradient(180deg, #e9edf9 0%, #cbd6f5 100%);
+            border-radius: 16px;
+            box-shadow: 0 18px 30px rgba(20, 30, 80, 0.16);
+        }
+
+        .scene-lodge::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: -38px;
+            width: 0;
+            height: 0;
+            border-left: 98px solid transparent;
+            border-right: 98px solid transparent;
+            border-bottom: 38px solid #b8c6ff;
+        }
+
+        .scene-logo {
+            position: absolute;
+            bottom: 18%;
+            right: 6%;
+            text-align: right;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .scene-logo span {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #5160b7;
+        }
+
+        @keyframes riverFlow {
+            0%, 100% { clip-path: polygon(0 40%, 20% 25%, 45% 30%, 70% 20%, 100% 35%, 100% 100%, 0 100%); }
+            50% { clip-path: polygon(0 45%, 20% 30%, 45% 28%, 70% 24%, 100% 40%, 100% 100%, 0 100%); }
+        }
+
+        @keyframes sunGlow {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
         .metric-card {
             background: #f0f7ff;
             border-left: 4px solid #1a237e;
@@ -1063,6 +1229,37 @@
                 padding: 8px 6px;
             }
 
+        .hse-badge {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            top: 16px;
+            right: 16px;
+        }
+
+        .hse-badge::before {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+        }
+
+        .hse-badge span {
+            font-size: 13px;
+        }
+
+        .hero-scene {
+            height: 300px;
+        }
+
+        .scene-tent {
+            width: 140px;
+            height: 90px;
+        }
+
+        .scene-lodge {
+            width: 170px;
+            height: 70px;
+        }
             .utp-box .two-columns {
                 grid-template-columns: 1fr;
                 gap: 15px;
@@ -1900,12 +2097,52 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Slide 15: Final Scene -->
+        <div class="slide">
+            <div class="header">
+                <div class="logo-section">
+                    <div class="logo-circle">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
+                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-text">Программа МВА</div>
+                    <div class="header-divider"></div>
+                    <div class="header-text">Москва 2026</div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="slide-title">RIVERPLACE — ДУБНА</div>
+                <div class="hero-scene">
+                    <div class="scene-sun"></div>
+                    <div class="scene-hills"></div>
+                    <div class="scene-forest"></div>
+                    <div class="scene-river"></div>
+                    <div class="scene-tent"></div>
+                    <div class="scene-lodge"></div>
+                    <div class="scene-logo">
+                        RiverPlace
+                        <span>Глэмпинг • Река Дубна • Лес</span>
+                    </div>
+                </div>
+                <div class="highlight-box whitespace">
+                    <p><strong>Финал:</strong> природа + инфраструктура + партнеры = устойчивый спрос и узнаваемый бренд.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="slide-counter">
-        <span id="current-slide">1</span> / 15
+        <span id="current-slide">1</span> / 16
     </div>
-    <!-- Updated: 2026-01-18 - Партнеры на одном слайде и финмодель -->
+    <!-- Updated: 2026-01-18 - Добавлены фото, анимации и финальный слайд -->
 
     <div class="navigation">
         <button class="nav-btn" id="prev-btn" onclick="changeSlide(-1)">← Назад</button>
@@ -1939,6 +2176,16 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowLeft') changeSlide(-1);
             if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Inject HSE badge into every slide
+        slides.forEach(slide => {
+            if (!slide.querySelector('.hse-badge')) {
+                const badge = document.createElement('div');
+                badge.className = 'hse-badge';
+                badge.innerHTML = '<span>ВШЭ</span>';
+                slide.appendChild(badge);
+            }
         });
 
         // Initialize
