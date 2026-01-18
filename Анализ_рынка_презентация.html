@@ -326,7 +326,7 @@
 
         .icon-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 18px;
             margin-top: 10px;
         }
@@ -360,15 +360,19 @@
         }
 
         .icon-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             color: var(--primary);
+            word-break: normal;
+            hyphens: auto;
         }
 
         .icon-text {
-            font-size: 14px;
+            font-size: 13px;
             color: #333;
-            line-height: 1.5;
+            line-height: 1.45;
+            word-break: normal;
+            hyphens: auto;
         }
 
         .flow {
@@ -474,6 +478,29 @@
             color: #333;
         }
 
+        .hse-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #1a237e;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            box-shadow: 0 10px 20px rgba(26, 35, 126, 0.25);
+        }
+
+        .hse-mark {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateZ(40px);
+        }
+
         .bar {
             height: 18px;
             border-radius: 999px;
@@ -532,12 +559,8 @@
             box-shadow: inset 0 8px 16px rgba(255, 255, 255, 0.4);
         }
 
-        .hse-badge span {
+        .hse-badge .hse-circle {
             position: relative;
-            font-weight: 700;
-            font-size: 16px;
-            color: #1a237e;
-            letter-spacing: 0.6px;
         }
 
         @keyframes badgeFloat {
@@ -1243,8 +1266,10 @@
             border-radius: 12px;
         }
 
-        .hse-badge span {
-            font-size: 13px;
+        .hse-badge .hse-circle {
+            width: 34px;
+            height: 34px;
+            font-size: 15px;
         }
 
         .hero-scene {
@@ -1305,7 +1330,11 @@
     <div class="presentation-container">
         <!-- Slide 1: Title -->
         <div class="slide active">
-            <div class="model-3d" aria-hidden="true"></div>
+            <div class="model-3d" aria-hidden="true">
+                <div class="hse-mark">
+                    <div class="hse-circle">В</div>
+                </div>
+            </div>
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -1336,7 +1365,11 @@
 
         <!-- Slide 2: Market Problem -->
         <div class="slide">
-            <div class="model-3d cube small" aria-hidden="true"></div>
+            <div class="model-3d cube small" aria-hidden="true">
+                <div class="hse-mark">
+                    <div class="hse-circle">В</div>
+                </div>
+            </div>
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -1744,6 +1777,12 @@
                         <div class="icon-text">Last‑minute и короткие заезды</div>
                     </div>
                 </div>
+                <ul class="bullet-list compact-list whitespace">
+                    <li>Календарь бронирований на 6 месяцев вперед</li>
+                    <li>Предоплата за закрепление дат</li>
+                    <li>Повторяемость успешных форматов</li>
+                    <li>Свободные даты — на маркетплейсы путешествий</li>
+                </ul>
             </div>
         </div>
 
@@ -2183,7 +2222,7 @@
             if (!slide.querySelector('.hse-badge')) {
                 const badge = document.createElement('div');
                 badge.className = 'hse-badge';
-                badge.innerHTML = '<span>ВШЭ</span>';
+                badge.innerHTML = '<div class="hse-circle">В</div>';
                 slide.appendChild(badge);
             }
         });
