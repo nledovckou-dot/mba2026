@@ -478,28 +478,54 @@
             color: #333;
         }
 
-        .hse-circle {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: #1a237e;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 20px;
-            box-shadow: 0 10px 20px rgba(26, 35, 126, 0.25);
+        .hse-glow {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 220px;
+            height: 220px;
+            border-radius: 60px;
+            transform: translate(-50%, -50%) rotate(6deg);
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95) 0%, rgba(182, 198, 255, 0.7) 45%, rgba(92, 107, 192, 0.9) 80%);
+            box-shadow:
+                0 0 60px rgba(92, 107, 192, 0.45),
+                0 0 120px rgba(92, 107, 192, 0.35);
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 0;
+            animation: glowPulse 7s ease-in-out infinite;
         }
 
-        .hse-mark {
+        .hse-glow::before {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            border-radius: 46px;
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: inset 0 10px 24px rgba(255, 255, 255, 0.35);
+        }
+
+        .hse-glow span {
             position: absolute;
             inset: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            transform: translateZ(40px);
-            z-index: 1;
+            font-weight: 700;
+            font-size: 56px;
+            color: #1a237e;
+            text-shadow: 0 6px 18px rgba(26, 35, 126, 0.35);
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1) rotate(6deg);
+                opacity: 0.68;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.06) rotate(2deg);
+                opacity: 0.9;
+            }
         }
 
         .bar {
@@ -532,43 +558,6 @@
             height: 12px;
             border-radius: 50%;
             margin-right: 6px;
-        }
-
-        .hse-badge {
-            position: absolute;
-            top: 22px;
-            right: 26px;
-            width: 72px;
-            height: 72px;
-            border-radius: 22px;
-            background: linear-gradient(145deg, #c8d3ff 0%, #7b8dff 100%);
-            box-shadow: 0 16px 35px rgba(30, 43, 120, 0.25);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-            animation: badgeFloat 6s ease-in-out infinite;
-        }
-
-        .hse-badge::before {
-            content: "";
-            position: absolute;
-            width: 52px;
-            height: 52px;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.45);
-            box-shadow: inset 0 8px 16px rgba(255, 255, 255, 0.4);
-            z-index: 0;
-        }
-
-        .hse-badge .hse-circle {
-            position: relative;
-            z-index: 1;
-        }
-
-        @keyframes badgeFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
         }
 
         .hero-scene {
@@ -1255,24 +1244,14 @@
                 padding: 8px 6px;
             }
 
-        .hse-badge {
-            width: 56px;
-            height: 56px;
-            border-radius: 18px;
-            top: 16px;
-            right: 16px;
+        .hse-glow {
+            width: 160px;
+            height: 160px;
+            border-radius: 46px;
         }
 
-        .hse-badge::before {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-        }
-
-        .hse-badge .hse-circle {
-            width: 34px;
-            height: 34px;
-            font-size: 15px;
+        .hse-glow span {
+            font-size: 38px;
         }
 
         .hero-scene {
@@ -1333,11 +1312,6 @@
     <div class="presentation-container">
         <!-- Slide 1: Title -->
         <div class="slide active">
-            <div class="model-3d" aria-hidden="true">
-                <div class="hse-mark">
-                    <div class="hse-circle">В</div>
-                </div>
-            </div>
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -1368,11 +1342,6 @@
 
         <!-- Slide 2: Market Problem -->
         <div class="slide">
-            <div class="model-3d cube small" aria-hidden="true">
-                <div class="hse-mark">
-                    <div class="hse-circle">В</div>
-                </div>
-            </div>
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -2224,13 +2193,13 @@
             if (e.key === 'ArrowRight') changeSlide(1);
         });
 
-        // Inject HSE badge into every slide
+        // Inject HSE photon logo into every slide
         slides.forEach(slide => {
-            if (!slide.querySelector('.hse-badge')) {
-                const badge = document.createElement('div');
-                badge.className = 'hse-badge';
-                badge.innerHTML = '<div class="hse-circle">В</div>';
-                slide.appendChild(badge);
+            if (!slide.querySelector('.hse-glow')) {
+                const glow = document.createElement('div');
+                glow.className = 'hse-glow';
+                glow.innerHTML = '<span>В</span>';
+                slide.appendChild(glow);
             }
         });
 
