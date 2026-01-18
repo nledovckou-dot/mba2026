@@ -120,6 +120,57 @@
             z-index: 1;
         }
 
+        .ambient-video {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.22;
+            mix-blend-mode: screen;
+        }
+
+        .ambient-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(2px) saturate(1.05);
+        }
+
+        .ambient-video.small {
+            width: 220px;
+            height: 220px;
+            right: 60px;
+            top: 120px;
+            inset: auto;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: var(--soft-shadow);
+            opacity: 0.3;
+        }
+
+        .ambient-video.corner {
+            width: 320px;
+            height: 180px;
+            left: 60px;
+            bottom: 60px;
+            inset: auto;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: var(--soft-shadow);
+            opacity: 0.25;
+        }
+
+        .ambient-video.strip {
+            height: 180px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            inset: auto;
+            border-radius: 0;
+            overflow: hidden;
+            opacity: 0.18;
+        }
+
         .hse-glow {
             position: absolute;
             left: 50%;
@@ -2429,6 +2480,17 @@
                 glow.className = 'hse-glow';
                 glow.innerHTML = '<span>В</span>';
                 slide.appendChild(glow);
+            }
+        });
+
+        // Inject ambient video accents into every slide
+        slides.forEach((slide, index) => {
+            if (!slide.querySelector('.ambient-video')) {
+                const ambient = document.createElement('div');
+                const variant = index % 3 === 0 ? 'small' : index % 3 === 1 ? 'corner' : 'strip';
+                ambient.className = `ambient-video ${variant}`;
+                ambient.innerHTML = '<video src="assets/final_glamping.mp4" autoplay muted loop playsinline></video>';
+                slide.appendChild(ambient);
             }
         });
 
