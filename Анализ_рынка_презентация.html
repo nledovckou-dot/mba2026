@@ -57,6 +57,36 @@
         .slide.active {
             display: flex;
             flex-direction: column;
+            animation: slideIn 0.7s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icon-card,
+        .flow-step,
+        .stat-box,
+        .metric-card {
+            animation: fadeUp 0.8s ease;
         }
 
         .slide::before,
@@ -314,17 +344,14 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .icon-badge {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 8px 18px rgba(26, 35, 126, 0.25);
+        .icon-photo {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .icon-card:hover {
@@ -367,13 +394,6 @@
             font-size: 20px;
             color: var(--primary);
             text-align: center;
-        }
-
-        .nano-banana {
-            font-size: 18px;
-            text-align: center;
-            margin: 8px 0 14px;
-            opacity: 0.85;
         }
 
         .whitespace {
@@ -467,7 +487,7 @@
 
         .line-chart {
             width: 100%;
-            height: 320px;
+            height: 380px;
         }
 
         .chart-legend-inline {
@@ -1142,27 +1162,26 @@
                 <div class="slide-title">ПРОБЛЕМА РЫНКА ГЛЭМПИНГА</div>
                 <div class="icon-grid">
                     <div class="icon-card">
-                        <div class="icon-badge">🌦️</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Сезонность</div>
                         <div class="icon-text">Пики по выходным, провалы в будни</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">📉</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Непредсказуемость</div>
                         <div class="icon-text">Сложно планировать загрузку и выручку</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">💸</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Дорогой B2C</div>
                         <div class="icon-text">Высокая стоимость привлечения</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">⚠️</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Риск кассовых разрывов</div>
                         <div class="icon-text">Низкая повторяемость бронирований</div>
                     </div>
                 </div>
-                <div class="nano-banana">🍌</div>
                 <div class="key-point">
                     <strong>Вывод:</strong> нужна предсказуемая B2B‑загрузка, а не только розничные брони.
                 </div>
@@ -1200,25 +1219,24 @@
                     <div class="flow-arrow">→</div>
                     <div class="flow-step">Остатки — B2C продажи</div>
                 </div>
-                <div class="nano-banana">🍌</div>
                 <div class="icon-grid">
                     <div class="icon-card">
-                        <div class="icon-badge">🗓️</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Календарь 3–6 мес.</div>
                         <div class="icon-text">Планируем загрузку заранее</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🔁</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Повторяемость</div>
                         <div class="icon-text">Стабильные партнерские заезды</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">📣</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Меньше B2C-маркетинга</div>
                         <div class="icon-text">Аудитория приходит через партнеров</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">✅</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Контроль качества</div>
                         <div class="icon-text">Единые стандарты площадки</div>
                     </div>
@@ -1250,27 +1268,26 @@
                 <div class="slide-title">КТО НАШ ПАРТНЕР</div>
                 <div class="icon-grid">
                     <div class="icon-card">
-                        <div class="icon-badge">🏕️</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Без своей базы</div>
                         <div class="icon-text">Нет собственной загородной площадки</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🧘</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Выездные форматы</div>
                         <div class="icon-text">Курсы, практики, интенсивы</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">👥</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Собирают группы</div>
                         <div class="icon-text">Умеют продавать программу</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">📆</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Планируют заранее</div>
                         <div class="icon-text">Бронирование дат по календарю</div>
                     </div>
                 </div>
-                <div class="nano-banana">🍌</div>
                 <div class="key-point">
                     <strong>Логика:</strong> мы даем природу, размещение и инфраструктуру; партнер отвечает за программу и аудиторию.
                 </div>
@@ -1301,22 +1318,22 @@
                 <div class="slide-title">ЦЕННОСТЬ ДЛЯ ПАРТНЕРОВ</div>
                 <div class="icon-grid">
                     <div class="icon-card">
-                        <div class="icon-badge">🏡</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1472224371017-08207f84aaae?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Готовая площадка</div>
                         <div class="icon-text">Природа, проживание, залы</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">⚡</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Быстрый запуск</div>
                         <div class="icon-text">“Приехал → провел → уехал”</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">💰</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Маржинальность</div>
                         <div class="icon-text">Без инвестиций в базу</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🔁</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Повторяемость</div>
                         <div class="icon-text">Сезонные форматы и серии</div>
                     </div>
@@ -1348,22 +1365,22 @@
                 <div class="slide-title">ЦЕННОСТЬ ДЛЯ RIVERPLACE</div>
                 <div class="icon-grid">
                     <div class="icon-card">
-                        <div class="icon-badge">🗓️</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Планируемая загрузка</div>
                         <div class="icon-text">Календарь на 3–6 месяцев</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">📊</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Ровные будни</div>
                         <div class="icon-text">Снижение сезонных провалов</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">👥</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Аудитория партнера</div>
                         <div class="icon-text">Новый приток без B2C‑расходов</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">💎</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">LTV и репутация</div>
                         <div class="icon-text">Повторяемость сильных форматов</div>
                     </div>
@@ -1395,45 +1412,45 @@
                 <div class="slide-title">ЧТО ПРОДАЕМ</div>
                 <div class="icon-grid">
                     <div class="icon-card">
-                        <div class="icon-badge">🌿</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Природа</div>
                         <div class="icon-text">Река, лес, приватность</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🛌</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Размещение</div>
                         <div class="icon-text">Проживание для групп</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🏫</div>
+                    <div class="icon-card">
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Залы</div>
                         <div class="icon-text">Практики, лекции, работа</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🍽️</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Кейтеринг</div>
                         <div class="icon-text">Кухня и питание под формат</div>
                     </div>
                 </div>
-                <div class="nano-banana">🍌</div>
                 <div class="icon-grid">
                     <div class="icon-card">
-                        <div class="icon-badge">🧖</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Баня/SPA</div>
                         <div class="icon-text">Телесные практики</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🎛️</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Техника</div>
                         <div class="icon-text">Звук, проектор, свет</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🚶</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Маршруты</div>
                         <div class="icon-text">Прогулки, медитация</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🚐</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Логистика</div>
                         <div class="icon-text">Трансфер по запросу</div>
                     </div>
@@ -1510,22 +1527,22 @@
                 <div class="slide-title">КАНАЛЫ ПРОДАЖ И ЗАГРУЗКА</div>
                 <div class="icon-grid">
                     <div class="icon-card">
-                        <div class="icon-badge">🎯</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Outreach</div>
                         <div class="icon-text">Нишевые сообщества и лидеры</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🤝</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Партнерские рекомендации</div>
                         <div class="icon-text">Сарафан внутри рынка</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">📆</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Календарь 6 мес.</div>
                         <div class="icon-text">Предоплата за закрепление дат</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🧩</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Остатки в розницу</div>
                         <div class="icon-text">Last‑minute и короткие заезды</div>
                     </div>
@@ -1557,45 +1574,44 @@
                 <div class="slide-title">ПАРТНЕРСКИЕ КАТЕГОРИИ (50+)</div>
                 <div class="icon-grid">
                     <div class="icon-card">
-                        <div class="icon-badge">🎭</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Тело/психика/перформанс</div>
                         <div class="icon-text">~8 партнеров: Gogol School, Authentic Movement</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🧘</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Йога/дыхание/медитация</div>
                         <div class="icon-text">~9 партнеров: Holi Yoga, Wim Hof</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🎨</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Арт‑практики</div>
                         <div class="icon-text">~10 партнеров: Painty, ZUART</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🏺</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Керамика/лепка</div>
                         <div class="icon-text">~8 партнеров: Ceramista, SREDA</div>
                     </div>
                 </div>
-                <div class="nano-banana">🍌</div>
                 <div class="icon-grid">
                     <div class="icon-card">
-                        <div class="icon-badge">🧠</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Психология/развитие</div>
                         <div class="icon-text">~8 партнеров: гештальт, IFS</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🌿</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Гибридные форматы</div>
                         <div class="icon-text">~7 партнеров: well‑being, slow life</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">👩‍💻</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Корпоративы/HR</div>
                         <div class="icon-text">Творческие выходные, командные ретриты</div>
                     </div>
                     <div class="icon-card">
-                        <div class="icon-badge">🎯</div>
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Авторские ретриты</div>
                         <div class="icon-text">1–2 ведущих, высокие чеки</div>
                     </div>
