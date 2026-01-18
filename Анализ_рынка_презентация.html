@@ -125,7 +125,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 30px;
         }
 
         .section {
@@ -194,6 +194,87 @@
             grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 16px;
             margin-top: 10px;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .icon-card {
+            background: #f7f9ff;
+            border: 1px solid #e0e7ff;
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .icon-badge {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: #1a237e;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .icon-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a237e;
+        }
+
+        .icon-text {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .flow {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .flow-step {
+            background: #ffffff;
+            border: 2px dashed #cfd8dc;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .flow-arrow {
+            font-size: 20px;
+            color: #1a237e;
+            text-align: center;
+        }
+
+        .nano-banana {
+            font-size: 18px;
+            text-align: center;
+            margin: 8px 0 14px;
+            opacity: 0.85;
+        }
+
+        .whitespace {
+            margin-top: 22px;
+        }
+
+        .muted {
+            color: #666;
+            font-size: 13px;
         }
 
         .stat-box {
@@ -706,10 +787,19 @@
                 margin-bottom: 20px;
             }
 
-            .two-columns, .three-columns, .four-columns, .partner-grid {
+            .two-columns, .three-columns, .four-columns, .partner-grid, .icon-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
                 margin-top: 15px;
+            }
+
+            .flow {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
             }
 
             .section-title {
@@ -936,28 +1026,31 @@
             </div>
             <div class="content">
                 <div class="slide-title">ПРОБЛЕМА РЫНКА ГЛЭМПИНГА</div>
-                <div class="two-columns">
-                    <div class="section">
-                        <div class="section-title">Системные ограничения</div>
-                        <ul class="bullet-list">
-                            <li>Сильная сезонность и зависимость от погоды</li>
-                            <li>Сложно прогнозировать загрузку и выручку</li>
-                            <li>Дорогой прямой маркетинг на B2C</li>
-                            <li>Провалы в будни и межсезонье</li>
-                        </ul>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <div class="icon-badge">🌦️</div>
+                        <div class="icon-title">Сезонность</div>
+                        <div class="icon-text">Пики по выходным, провалы в будни</div>
                     </div>
-                    <div class="section">
-                        <div class="section-title">Что теряем</div>
-                        <ul class="bullet-list">
-                            <li>Низкая заполняемость инфраструктуры</li>
-                            <li>Слабая повторяемость бронирований</li>
-                            <li>Ограниченная аудитория “просто отдыха”</li>
-                            <li>Риск кассовых разрывов из-за неравномерности</li>
-                        </ul>
-                        <div class="key-point" style="margin-top: 20px;">
-                            <strong>Вывод:</strong> нужна предсказуемая B2B-загрузка, а не только розничные брони.
-                        </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">📉</div>
+                        <div class="icon-title">Непредсказуемость</div>
+                        <div class="icon-text">Сложно планировать загрузку и выручку</div>
                     </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">💸</div>
+                        <div class="icon-title">Дорогой B2C</div>
+                        <div class="icon-text">Высокая стоимость привлечения</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">⚠️</div>
+                        <div class="icon-title">Риск кассовых разрывов</div>
+                        <div class="icon-text">Низкая повторяемость бронирований</div>
+                    </div>
+                </div>
+                <div class="nano-banana">🍌</div>
+                <div class="key-point">
+                    <strong>Вывод:</strong> нужна предсказуемая B2B‑загрузка, а не только розничные брони.
                 </div>
             </div>
         </div>
@@ -984,27 +1077,36 @@
             </div>
             <div class="content">
                 <div class="slide-title">СТРАТЕГИЯ: B2B-ПЛАТФОРМА</div>
-                <div class="highlight-box">
-                    <p><strong>Идея:</strong> предоставляем площадку для выездных форматов, чтобы заранее понять нагрузку, равномерно распределить календарь и снизить затраты на собственный маркетинг.</p>
+                <div class="flow">
+                    <div class="flow-step">Партнер бронирует даты</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">RiverPlace дает площадку</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">Партнер привозит аудиторию</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">Остатки — B2C продажи</div>
                 </div>
-                <div class="two-columns">
-                    <div class="section">
-                        <div class="section-title">Как это работает</div>
-                        <ul class="bullet-list">
-                            <li>Партнер бронирует даты под свой формат</li>
-                            <li>Мы предоставляем природу, проживание и инфраструктуру</li>
-                            <li>Партнер привозит свою аудиторию и продает программу</li>
-                            <li>Остаточные мощности продаем как обычное проживание</li>
-                        </ul>
+                <div class="nano-banana">🍌</div>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <div class="icon-badge">🗓️</div>
+                        <div class="icon-title">Календарь 3–6 мес.</div>
+                        <div class="icon-text">Планируем загрузку заранее</div>
                     </div>
-                    <div class="section">
-                        <div class="section-title">Что меняется</div>
-                        <ul class="bullet-list">
-                            <li>Переносим риск загрузки на совместные продажи</li>
-                            <li>Создаем календарь выездов на 3–6 месяцев вперед</li>
-                            <li>Получаем повторяемые заезды одной и той же аудитории</li>
-                            <li>Меньше прямых расходов на B2C-промо</li>
-                        </ul>
+                    <div class="icon-card">
+                        <div class="icon-badge">🔁</div>
+                        <div class="icon-title">Повторяемость</div>
+                        <div class="icon-text">Стабильные партнерские заезды</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">📣</div>
+                        <div class="icon-title">Меньше B2C-маркетинга</div>
+                        <div class="icon-text">Аудитория приходит через партнеров</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">✅</div>
+                        <div class="icon-title">Контроль качества</div>
+                        <div class="icon-text">Единые стандарты площадки</div>
                     </div>
                 </div>
             </div>
@@ -1032,17 +1134,30 @@
             </div>
             <div class="content">
                 <div class="slide-title">КТО НАШ ПАРТНЕР</div>
-                <div class="section">
-                    <div class="section-title">Оставляем в базе только тех, кто:</div>
-                    <ul class="bullet-list">
-                        <li>Не имеет собственной загородной площадки или отеля</li>
-                        <li>Зарабатывает на выездных форматах, курсах, практиках</li>
-                        <li>Умеет собирать группы и продавать программу</li>
-                        <li>Готов бронировать даты заранее (календарное планирование)</li>
-                        <li>Заинтересован в маржинальности без инвестиций в базу</li>
-                    </ul>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <div class="icon-badge">🏕️</div>
+                        <div class="icon-title">Без своей базы</div>
+                        <div class="icon-text">Нет собственной загородной площадки</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">🧘</div>
+                        <div class="icon-title">Выездные форматы</div>
+                        <div class="icon-text">Курсы, практики, интенсивы</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">👥</div>
+                        <div class="icon-title">Собирают группы</div>
+                        <div class="icon-text">Умеют продавать программу</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">📆</div>
+                        <div class="icon-title">Планируют заранее</div>
+                        <div class="icon-text">Бронирование дат по календарю</div>
+                    </div>
                 </div>
-                <div class="key-point" style="margin-top: 20px;">
+                <div class="nano-banana">🍌</div>
+                <div class="key-point">
                     <strong>Логика:</strong> мы даем природу, размещение и инфраструктуру; партнер отвечает за программу и аудиторию.
                 </div>
             </div>
@@ -1070,24 +1185,26 @@
             </div>
             <div class="content">
                 <div class="slide-title">ЦЕННОСТЬ ДЛЯ ПАРТНЕРОВ</div>
-                <div class="two-columns">
-                    <div class="section">
-                        <div class="section-title">Что получает партнер</div>
-                        <ul class="bullet-list">
-                            <li>Готовая площадка: природа + проживание + залы</li>
-                            <li>Простота: “приехал → провел → уехал”</li>
-                            <li>Маржинальность без инвестиций в базу</li>
-                            <li>Готовая логистика, бытовые задачи закрыты</li>
-                        </ul>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <div class="icon-badge">🏡</div>
+                        <div class="icon-title">Готовая площадка</div>
+                        <div class="icon-text">Природа, проживание, залы</div>
                     </div>
-                    <div class="section">
-                        <div class="section-title">Почему это выгодно</div>
-                        <ul class="bullet-list">
-                            <li>Быстрый запуск ретритов и интенсивов</li>
-                            <li>Можно концентрироваться на клиенте и программе</li>
-                            <li>Честная прозрачная модель платежей</li>
-                            <li>Возможность повторять форматы сезонно</li>
-                        </ul>
+                    <div class="icon-card">
+                        <div class="icon-badge">⚡</div>
+                        <div class="icon-title">Быстрый запуск</div>
+                        <div class="icon-text">“Приехал → провел → уехал”</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">💰</div>
+                        <div class="icon-title">Маржинальность</div>
+                        <div class="icon-text">Без инвестиций в базу</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">🔁</div>
+                        <div class="icon-title">Повторяемость</div>
+                        <div class="icon-text">Сезонные форматы и серии</div>
                     </div>
                 </div>
             </div>
@@ -1115,24 +1232,26 @@
             </div>
             <div class="content">
                 <div class="slide-title">ЦЕННОСТЬ ДЛЯ RIVERPLACE</div>
-                <div class="two-columns">
-                    <div class="section">
-                        <div class="section-title">Финансы и загрузка</div>
-                        <ul class="bullet-list">
-                            <li>Предсказуемый календарь на 3–6 месяцев</li>
-                            <li>Равномерная загрузка будней</li>
-                            <li>Снижение зависимости от сезона</li>
-                            <li>Стабильный поток групповых броней</li>
-                        </ul>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <div class="icon-badge">🗓️</div>
+                        <div class="icon-title">Планируемая загрузка</div>
+                        <div class="icon-text">Календарь на 3–6 месяцев</div>
                     </div>
-                    <div class="section">
-                        <div class="section-title">Маркетинг и бренд</div>
-                        <ul class="bullet-list">
-                            <li>Партнер приводит свою аудиторию</li>
-                            <li>Репутация площадки закрепляется через повторяемые форматы</li>
-                            <li>Меньше затрат на B2C-привлечение</li>
-                            <li>Повышение LTV за счет возвращаемости партнеров</li>
-                        </ul>
+                    <div class="icon-card">
+                        <div class="icon-badge">📊</div>
+                        <div class="icon-title">Ровные будни</div>
+                        <div class="icon-text">Снижение сезонных провалов</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">👥</div>
+                        <div class="icon-title">Аудитория партнера</div>
+                        <div class="icon-text">Новый приток без B2C‑расходов</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">💎</div>
+                        <div class="icon-title">LTV и репутация</div>
+                        <div class="icon-text">Повторяемость сильных форматов</div>
                     </div>
                 </div>
             </div>
@@ -1160,24 +1279,49 @@
             </div>
             <div class="content">
                 <div class="slide-title">ЧТО ПРОДАЕМ</div>
-                <div class="two-columns">
-                    <div class="section">
-                        <div class="section-title">Площадка</div>
-                        <ul class="bullet-list">
-                            <li>Природа и приватность (река, лес)</li>
-                            <li>Проживание для групп</li>
-                            <li>Залы для практик, лекций, групповой работы</li>
-                            <li>Кухня/кейтеринг под форматы</li>
-                        </ul>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <div class="icon-badge">🌿</div>
+                        <div class="icon-title">Природа</div>
+                        <div class="icon-text">Река, лес, приватность</div>
                     </div>
-                    <div class="section">
-                        <div class="section-title">Инфраструктура</div>
-                        <ul class="bullet-list">
-                            <li>Баня/SPA, места для телесных практик</li>
-                            <li>Техоснащение (звук, проектор, свет)</li>
-                            <li>Прогулочные и медитативные зоны</li>
-                            <li>Трансфер и логистика по запросу</li>
-                        </ul>
+                    <div class="icon-card">
+                        <div class="icon-badge">🛌</div>
+                        <div class="icon-title">Размещение</div>
+                        <div class="icon-text">Проживание для групп</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">🏫</div>
+                        <div class="icon-title">Залы</div>
+                        <div class="icon-text">Практики, лекции, работа</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">🍽️</div>
+                        <div class="icon-title">Кейтеринг</div>
+                        <div class="icon-text">Кухня и питание под формат</div>
+                    </div>
+                </div>
+                <div class="nano-banana">🍌</div>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <div class="icon-badge">🧖</div>
+                        <div class="icon-title">Баня/SPA</div>
+                        <div class="icon-text">Телесные практики</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">🎛️</div>
+                        <div class="icon-title">Техника</div>
+                        <div class="icon-text">Звук, проектор, свет</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">🚶</div>
+                        <div class="icon-title">Маршруты</div>
+                        <div class="icon-text">Прогулки, медитация</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">🚐</div>
+                        <div class="icon-title">Логистика</div>
+                        <div class="icon-text">Трансфер по запросу</div>
                     </div>
                 </div>
             </div>
@@ -1250,24 +1394,26 @@
             </div>
             <div class="content">
                 <div class="slide-title">КАНАЛЫ ПРОДАЖ И ЗАГРУЗКА</div>
-                <div class="two-columns">
-                    <div class="section">
-                        <div class="section-title">B2B-каналы</div>
-                        <ul class="bullet-list">
-                            <li>Прямой outreach по нишевым сообществам</li>
-                            <li>Партнерские рекомендации внутри рынка</li>
-                            <li>Пакет “готовая база” для ведущих</li>
-                            <li>Сезонные подборки и тематические заезды</li>
-                        </ul>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <div class="icon-badge">🎯</div>
+                        <div class="icon-title">Outreach</div>
+                        <div class="icon-text">Нишевые сообщества и лидеры</div>
                     </div>
-                    <div class="section">
-                        <div class="section-title">Управление календарем</div>
-                        <ul class="bullet-list">
-                            <li>Календарь бронирований на 6 месяцев</li>
-                            <li>Предоплата за закрепление дат</li>
-                            <li>Повторяемость успешных форматов</li>
-                            <li>Остаточные даты — в розницу</li>
-                        </ul>
+                    <div class="icon-card">
+                        <div class="icon-badge">🤝</div>
+                        <div class="icon-title">Партнерские рекомендации</div>
+                        <div class="icon-text">Сарафан внутри рынка</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">📆</div>
+                        <div class="icon-title">Календарь 6 мес.</div>
+                        <div class="icon-text">Предоплата за закрепление дат</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">🧩</div>
+                        <div class="icon-title">Остатки в розницу</div>
+                        <div class="icon-text">Last‑minute и короткие заезды</div>
                     </div>
                 </div>
             </div>
@@ -1294,83 +1440,53 @@
                 </div>
             </div>
             <div class="content">
-                <div class="slide-title">СПИСОК ПАРТНЕРОВ (ОБЩИЙ, ~50)</div>
-                <div class="partner-grid">
-                    <div class="partner-column">
-                        <h4>Тело, психика, творчество</h4>
-                        <ul class="bullet-list compact-list">
-                            <li>Gogol School — актерские, телесные практики</li>
-                            <li>Игра пространства — телесный театр, эмоции</li>
-                            <li>Impro Studio — импровизация, контакт</li>
-                            <li>Authentic Movement — телесная осознанность</li>
-                            <li>Moscow CI — контактная импровизация</li>
-                            <li>Психодрама-сообщества Москвы</li>
-                            <li>Телесные терапевты (ТОП-сообщества)</li>
-                            <li>Somatic Experiencing Russia</li>
-                        </ul>
-                        <h4 style="margin-top: 12px;">Йога, дыхание, медитация</h4>
-                        <ul class="bullet-list compact-list">
-                            <li>Holi Yoga — ретриты</li>
-                            <li>Yoga Practika — выездные туры</li>
-                            <li>Ashtanga Moscow Community</li>
-                            <li>Kundalini Yoga Moscow</li>
-                            <li>Breathwork Moscow</li>
-                            <li>Wim Hof Method Moscow</li>
-                            <li>Mindfulness Moscow</li>
-                            <li>Vipassana-сообщества (не центры)</li>
-                            <li>Sound Healing Moscow</li>
-                        </ul>
+                <div class="slide-title">ПАРТНЕРСКИЕ КАТЕГОРИИ (50+)</div>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <div class="icon-badge">🎭</div>
+                        <div class="icon-title">Тело/психика/перформанс</div>
+                        <div class="icon-text">~8 партнеров: Gogol School, Authentic Movement</div>
                     </div>
-                    <div class="partner-column">
-                        <h4>Рисование, арт-практики</h4>
-                        <ul class="bullet-list compact-list">
-                            <li>Painty — арт-вечеринки, корпоративы</li>
-                            <li>Draw Up Studio — выездные арт-ивенты</li>
-                            <li>Na Holste — живопись на природе</li>
-                            <li>ZUART — арт-интенсивы</li>
-                            <li>Найди себя — групповое рисование</li>
-                            <li>House of Arts — арт-курсы и выезды</li>
-                            <li>Studio Paspartu — живопись, натура</li>
-                            <li>Kalacheva School (выезды)</li>
-                            <li>Sketching Moscow Community — пленэры</li>
-                            <li>Арт-ретриты независимых художников</li>
-                        </ul>
-                        <h4 style="margin-top: 12px;">Керамика и лепка</h4>
-                        <ul class="bullet-list compact-list">
-                            <li>Гончарная студия №1 (event)</li>
-                            <li>Ceramista — керамика, группы</li>
-                            <li>Anna Ceramica — лепка</li>
-                            <li>VGLINU — терапевтическая лепка</li>
-                            <li>SREDA Studio — керамика + группы</li>
-                            <li>Frenkel Ceramics — авторская керамика</li>
-                            <li>Maleva Studio — керамика + арт</li>
-                            <li>LEMUR Pottery (event)</li>
-                        </ul>
+                    <div class="icon-card">
+                        <div class="icon-badge">🧘</div>
+                        <div class="icon-title">Йога/дыхание/медитация</div>
+                        <div class="icon-text">~9 партнеров: Holi Yoga, Wim Hof</div>
                     </div>
-                    <div class="partner-column">
-                        <h4>Психология, развитие</h4>
-                        <ul class="bullet-list compact-list">
-                            <li>Гештальт-сообщества Москвы</li>
-                            <li>IFS-практики (Internal Family Systems)</li>
-                            <li>Coaching Retreats (частные коучи)</li>
-                            <li>Men’s Circle Moscow</li>
-                            <li>Women’s Circles Moscow</li>
-                            <li>Mindful Leadership (тренеры)</li>
-                            <li>Digital Detox / Silent Retreat</li>
-                            <li>Somatic Yoga Teachers (private)</li>
-                        </ul>
-                        <h4 style="margin-top: 12px;">Гибридные форматы</h4>
-                        <ul class="bullet-list compact-list">
-                            <li>Йога + арт-ретриты (кураторы)</li>
-                            <li>Дыхание + баня + природа</li>
-                            <li>Творческие выходные для IT/корпоратов</li>
-                            <li>Well-being команды (HR-форматы)</li>
-                            <li>Женские self-care ретриты</li>
-                            <li>Slow life / mindful weekend</li>
-                            <li>Авторские ретриты (1–2 ведущих)</li>
-                        </ul>
+                    <div class="icon-card">
+                        <div class="icon-badge">🎨</div>
+                        <div class="icon-title">Арт‑практики</div>
+                        <div class="icon-text">~10 партнеров: Painty, ZUART</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">🏺</div>
+                        <div class="icon-title">Керамика/лепка</div>
+                        <div class="icon-text">~8 партнеров: Ceramista, SREDA</div>
                     </div>
                 </div>
+                <div class="nano-banana">🍌</div>
+                <div class="icon-grid">
+                    <div class="icon-card">
+                        <div class="icon-badge">🧠</div>
+                        <div class="icon-title">Психология/развитие</div>
+                        <div class="icon-text">~8 партнеров: гештальт, IFS</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">🌿</div>
+                        <div class="icon-title">Гибридные форматы</div>
+                        <div class="icon-text">~7 партнеров: well‑being, slow life</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">👩‍💻</div>
+                        <div class="icon-title">Корпоративы/HR</div>
+                        <div class="icon-text">Творческие выходные, командные ретриты</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-badge">🎯</div>
+                        <div class="icon-title">Авторские ретриты</div>
+                        <div class="icon-text">1–2 ведущих, высокие чеки</div>
+                    </div>
+                </div>
+                <div class="muted whitespace">Полный список сохраняется в базе партнеров; на слайде — категории и примеры.</div>
             </div>
         </div>
 
