@@ -20,7 +20,6 @@
             --shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
             --soft-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
             --border: rgba(26, 35, 126, 0.08);
-            --final-image: url('final_glamping.jpg');
         }
 
         body {
@@ -807,12 +806,14 @@
             height: 100%;
             border-radius: 28px;
             overflow: hidden;
-            background-image:
-                var(--final-image),
-                linear-gradient(135deg, #cfe3ff 0%, #eef4ff 55%, #ffffff 100%);
-            background-size: cover;
-            background-position: center;
             position: relative;
+        }
+
+        .iphone-screen video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .iphone-screen::after {
@@ -2321,7 +2322,9 @@
             <div class="content">
                 <div class="slide-title">RIVERPLACE — ДУБНА</div>
                 <div class="iphone-frame">
-                    <div class="iphone-screen"></div>
+                    <div class="iphone-screen">
+                        <video src="assets/final_glamping.mp4" autoplay muted loop playsinline></video>
+                    </div>
                 </div>
                 <div class="highlight-box whitespace">
                     <p><strong>Финал:</strong> природа + инфраструктура + партнеры = устойчивый спрос и узнаваемый бренд.</p>
