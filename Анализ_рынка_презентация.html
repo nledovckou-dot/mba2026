@@ -1489,6 +1489,53 @@
                 max-width: 100%;
                 height: 150px;
             }
+
+            .slide {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .slide .content {
+                max-height: none;
+            }
+
+            .timeline-chart {
+                height: 360px;
+            }
+
+            .hero-overlay {
+                padding: 24px 16px;
+            }
+        }
+
+        @media (max-width: 1440px) {
+            .slide {
+                padding: 50px 60px;
+            }
+
+            .slide-title {
+                font-size: 40px;
+            }
+
+            .slide-subtitle {
+                font-size: 28px;
+            }
+
+            .icon-card {
+                padding: 14px;
+            }
+
+            .icon-grid {
+                gap: 14px;
+            }
+
+            .timeline-chart {
+                height: 480px;
+            }
+
+            .hero-caption {
+                font-size: 18px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1529,24 +1576,6 @@
                 <video src="assets/hero_slide1.mp4" autoplay muted loop playsinline></video>
             </div>
             <div class="hero-overlay">
-                <div class="header">
-                    <div class="logo-section">
-                        <div class="logo-circle">
-                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                                <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                            </svg>
-                        </div>
-                        <div class="logo-text">
-                            ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                        </div>
-                    </div>
-                    <div class="header-right">
-                        <div class="header-text">Программа МВА</div>
-                        <div class="header-divider"></div>
-                        <div class="header-text">Москва 2026</div>
-                    </div>
-                </div>
                 <div class="content" style="justify-content: center; align-items: center; text-align: center;">
                     <div class="slide-title" style="font-size: 56px; margin-bottom: 20px;">B2B ПЛАТФОРМА КОЛЛАБОРАЦИЙ</div>
                     <div class="slide-subtitle" style="font-size: 36px; margin-bottom: 25px;">RiverPlace: природа, размещение, инфраструктура</div>
@@ -1604,6 +1633,77 @@
                 </div>
                 <div class="key-point">
                     <strong>Вывод:</strong> нужна предсказуемая B2B‑загрузка, а не только розничные брони.
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Wordstat Pie -->
+        <div class="slide">
+            <div class="header">
+                <div class="logo-section">
+                    <div class="logo-circle">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
+                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-text">Программа МВА</div>
+                    <div class="header-divider"></div>
+                    <div class="header-text">Москва 2026</div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="slide-title">WORDSTAT: РАСПРЕДЕЛЕНИЕ СПРОСА</div>
+                <div class="chart-container">
+                    <div style="position: relative; width: 220px; height: 220px;">
+                        <svg width="220" height="220" viewBox="0 0 200 200" style="transform: rotate(-90deg);">
+                            <!-- Отели подмосковье: 116,348 (78.4%) -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#1a237e" stroke-width="40"
+                                stroke-dasharray="502.4 68.8" stroke-dashoffset="0"/>
+                            <!-- Эко отели: 14,922 (10.1%) -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#42a5f5" stroke-width="40"
+                                stroke-dasharray="50.7 520.5" stroke-dashoffset="-502.4"/>
+                            <!-- Снять дом: 13,088 (8.8%) -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#66bb6a" stroke-width="40"
+                                stroke-dasharray="44.4 526.8" stroke-dashoffset="-553.1"/>
+                            <!-- Глэмпинг: 2,795 (1.9%) -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#ff9800" stroke-width="40"
+                                stroke-dasharray="9.5 561.7" stroke-dashoffset="-597.5"/>
+                            <!-- Отели в лесу: 1,148 (0.8%) -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#ef5350" stroke-width="40"
+                                stroke-dasharray="3.9 567.3" stroke-dashoffset="-607"/>
+                        </svg>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #1a237e;"></div>
+                            <span><strong>Отели подмосковье:</strong> 78.4% (116,348)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #42a5f5;"></div>
+                            <span><strong>Эко отели:</strong> 10.1% (14,922)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #66bb6a;"></div>
+                            <span><strong>Снять дом:</strong> 8.8% (13,088)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #ff9800;"></div>
+                            <span><strong>Глэмпинг:</strong> 1.9% (2,795)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #ef5350;"></div>
+                            <span><strong>Отели в лесу:</strong> 0.8% (1,148)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-box whitespace">
+                    <p><strong>Вывод:</strong> спрос формируется через знакомые категории «отели» и «дома», а не только «глэмпинг».</p>
                 </div>
             </div>
         </div>
@@ -2401,9 +2501,9 @@
     </div>
 
     <div class="slide-counter">
-        <span id="current-slide">1</span> / 16
+        <span id="current-slide">1</span> / 17
     </div>
-    <!-- Updated: 2026-01-18 - Добавлены фото, анимации и финальный слайд -->
+    <!-- Updated: 2026-01-18 - Возвращен Wordstat и обновлен титульный -->
 
     <div class="navigation">
         <button class="nav-btn" id="prev-btn" onclick="changeSlide(-1)">← Назад</button>
