@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Анализ рынка - RiverPlace</title>
+    <link rel="preload" as="image" href="assets/hero_slide1_poster.jpg">
+    <link rel="preload" as="image" href="assets/final_glamping_poster.jpg">
     <style>
         * {
             margin: 0;
@@ -50,7 +52,7 @@
             border-radius: 24px;
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
-            overflow-y: auto;
+            overflow: hidden;
             backdrop-filter: blur(8px);
         }
 
@@ -396,6 +398,46 @@
             margin-top: 10px;
         }
 
+        .partner-mosaic {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .partner-mosaic .icon-card {
+            padding: 14px;
+        }
+
+        .partner-mosaic .icon-title {
+            font-size: 14px;
+        }
+
+        .partner-mosaic .icon-text {
+            font-size: 12px;
+        }
+
+        .packages-slide .stat-box {
+            padding: 16px;
+        }
+
+        .packages-slide .stat-number {
+            font-size: 30px;
+        }
+
+        .packages-slide .stat-label,
+        .packages-slide .stat-growth {
+            font-size: 14px;
+        }
+
+        .packages-slide .key-point {
+            margin-top: 12px !important;
+            padding: 12px;
+        }
+
+        .packages-slide .key-point,
+        .packages-slide .key-point p {
+            font-size: 14px;
+        }
+
         .icon-card {
             background: rgba(255, 255, 255, 0.92);
             border: 1px solid rgba(26, 35, 126, 0.08);
@@ -601,6 +643,10 @@
             height: 520px;
         }
 
+        .fit-screen .timeline-chart {
+            height: 360px;
+        }
+
         .timeline-chart text {
             font-size: 14px !important;
         }
@@ -639,12 +685,36 @@
             animation-delay: 1.2s;
         }
 
+        .timeline-chart .callout {
+            opacity: 0;
+        }
+
+        .timeline-chart.animate .callout {
+            animation: fadeUp 0.8s ease forwards;
+        }
+
         .timeline-legend {
             display: flex;
             gap: 18px;
             margin-top: 10px;
             font-size: 14px;
             color: #333;
+            position: absolute;
+            left: 18px;
+            bottom: 14px;
+            z-index: 3;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 8px 10px;
+            border-radius: 12px;
+            box-shadow: var(--soft-shadow);
+        }
+
+        .fit-screen .timeline-legend {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            margin-top: 0;
+            font-size: 12px;
         }
 
         .timeline-legend span {
@@ -1277,11 +1347,11 @@
         @media (max-width: 768px) {
             .slide {
                 padding: 20px 15px;
-                overflow-y: auto;
+                overflow: hidden;
             }
 
             .header {
-                margin-bottom: 20px;
+                margin-bottom: 14px;
                 flex-wrap: wrap;
             }
 
@@ -1305,13 +1375,13 @@
             }
 
             .slide-title {
-                font-size: 28px;
-                margin-bottom: 20px;
+                font-size: 26px;
+                margin-bottom: 14px;
             }
 
             .slide-subtitle {
-                font-size: 22px;
-                margin-bottom: 20px;
+                font-size: 20px;
+                margin-bottom: 14px;
             }
 
             .two-columns, .three-columns, .four-columns, .partner-grid, .icon-grid {
@@ -1416,6 +1486,56 @@
 
             .content {
                 gap: 15px;
+            }
+
+            .slide .content {
+                overflow-y: auto;
+                max-height: calc(100vh - 150px);
+                padding-right: 6px;
+            }
+
+            .fit-screen .content {
+                overflow: hidden;
+                max-height: none;
+            }
+
+            .hero-slide .slide-title {
+                font-size: 22px;
+                line-height: 1.2;
+                margin-bottom: 10px;
+            }
+
+            .hero-slide .slide-subtitle {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            .hero-overlay .hero-caption {
+                font-size: 12px;
+                margin-top: 10px;
+            }
+
+            .fit-screen .timeline-chart {
+                height: 300px;
+            }
+
+            .fit-screen .timeline-legend {
+                position: static;
+                background: transparent;
+                box-shadow: none;
+                padding: 0;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+                font-size: 11px;
+            }
+
+            .fit-screen .iphone-frame {
+                width: 100%;
+                max-width: 360px;
+                padding: 10px;
+                border-radius: 26px;
+                animation: none;
             }
 
             .competitor-box, .collaboration-item {
@@ -1545,7 +1665,7 @@
             }
 
             .slide-title {
-                font-size: 24px;
+                font-size: 22px;
             }
 
             .section-title {
@@ -1559,6 +1679,22 @@
             .stat-number {
                 font-size: 24px;
             }
+
+            .hero-slide .slide-title {
+                font-size: 20px;
+            }
+
+            .hero-slide .slide-subtitle {
+                font-size: 15px;
+            }
+
+            .fit-screen .timeline-chart {
+                height: 240px;
+            }
+
+            .fit-screen .iphone-frame {
+                max-width: 300px;
+            }
         }
 
         /* Optimize content overflow */
@@ -1567,14 +1703,20 @@
             max-height: calc(100vh - 180px);
             padding-right: 10px;
         }
+
+        .fit-screen .content {
+            overflow: hidden;
+            max-height: none;
+            padding-right: 0;
+        }
     </style>
 </head>
 <body>
     <div class="presentation-container">
         <!-- Slide 1: Title -->
-        <div class="slide active hero-slide">
+        <div class="slide active hero-slide fit-screen">
             <div class="hero-video">
-                <img src="assets/hero_slide1.gif" alt="Hero background">
+                <video data-src="assets/hero_slide1.mp4" poster="assets/hero_slide1_poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
             </div>
             <div class="hero-overlay">
                 <div class="header">
@@ -1657,7 +1799,7 @@
         </div>
 
         <!-- Slide 3: Wordstat Pie -->
-        <div class="slide">
+        <div class="slide fit-screen">
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -1997,7 +2139,7 @@
         </div>
 
         <!-- Slide 8: Product Packages -->
-        <div class="slide">
+        <div class="slide fit-screen packages-slide">
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -2085,12 +2227,6 @@
                         <div class="icon-text">Last‑minute и короткие заезды</div>
                     </div>
                 </div>
-                <ul class="bullet-list compact-list whitespace">
-                    <li>Календарь бронирований на 6 месяцев вперед</li>
-                    <li>Предоплата за закрепление дат</li>
-                    <li>Повторяемость успешных форматов</li>
-                    <li>Свободные даты — на маркетплейсы путешествий</li>
-                </ul>
             </div>
         </div>
 
@@ -2116,7 +2252,7 @@
             </div>
             <div class="content">
                 <div class="slide-title">ПАРТНЕРСКИЕ КАТЕГОРИИ (50+)</div>
-                <div class="icon-grid">
+                <div class="icon-grid partner-mosaic">
                     <div class="icon-card">
                         <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Тело/психика/перформанс</div>
@@ -2137,8 +2273,6 @@
                         <div class="icon-title">Керамика/лепка</div>
                         <div class="icon-text">~8 партнеров: Ceramista, SREDA</div>
                     </div>
-                </div>
-                <div class="icon-grid">
                     <div class="icon-card">
                         <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Психология/развитие</div>
@@ -2160,7 +2294,6 @@
                         <div class="icon-text">1–2 ведущих, высокие чеки</div>
                     </div>
                 </div>
-                <div class="muted whitespace">Полный список сохраняется в базе партнеров; на слайде — категории и примеры.</div>
             </div>
         </div>
 
@@ -2327,7 +2460,7 @@
         </div>
 
         <!-- Slide 13: Payback & Profitability -->
-        <div class="slide">
+        <div class="slide fit-screen">
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -2436,19 +2569,31 @@
                             <title>Точка окупаемости: 4,7 год</title>
                         </circle>
 
-                        <text class="chart-label" x="610" y="155">ОКУПАЕМОСТЬ ~4,7 ГОДА</text>
-                        <text class="chart-label" x="640" y="120">ROI 115% (Год 5)</text>
-                        <text class="chart-label" x="620" y="140">Выручка 42 млн</text>
+                        <g class="callout" style="animation-delay: 0.6s;">
+                            <rect x="95" y="70" width="170" height="48" rx="18" fill="#ffffff" stroke="#dfe5f3"/>
+                            <text x="112" y="92" font-size="12" fill="#1a237e" font-weight="600">Запуск</text>
+                            <text x="112" y="108" font-size="12" fill="#4a5568">первые продажи</text>
+                        </g>
+                        <g class="callout" style="animation-delay: 1.4s;">
+                            <rect x="330" y="70" width="230" height="48" rx="18" fill="#ffffff" stroke="#dfe5f3"/>
+                            <text x="346" y="92" font-size="12" fill="#1a237e" font-weight="600">Выход на проектную мощность</text>
+                            <text x="346" y="108" font-size="12" fill="#4a5568">рост выручки и маржи</text>
+                        </g>
+                        <g class="callout" style="animation-delay: 2.2s;">
+                            <rect x="560" y="180" width="230" height="52" rx="18" fill="#ffffff" stroke="#dfe5f3"/>
+                            <text x="576" y="202" font-size="12" fill="#1a237e" font-weight="600">Окупаемость</text>
+                            <text x="576" y="218" font-size="12" fill="#4a5568">~4,7 года, ROI 115%</text>
+                        </g>
                     </svg>
                     <div class="payback-burst" aria-hidden="true">
                         <span></span><span></span><span></span><span></span>
                         <span></span><span></span><span></span><span></span>
                     </div>
-                </div>
-                <div class="timeline-legend">
-                    <span><i class="timeline-dot" style="background:#1a237e;"></i>Выручка, млн руб.</span>
-                    <span><i class="timeline-dot" style="background:#42a5f5;"></i>EBITDA %, маржа</span>
-                    <span><i class="timeline-dot" style="background:#ff9800;"></i>ROI, накопленный</span>
+                    <div class="timeline-legend">
+                        <span><i class="timeline-dot" style="background:#1a237e;"></i>Выручка, млн руб.</span>
+                        <span><i class="timeline-dot" style="background:#42a5f5;"></i>EBITDA %, маржа</span>
+                        <span><i class="timeline-dot" style="background:#ff9800;"></i>ROI, накопленный</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2486,7 +2631,7 @@
         </div>
 
         <!-- Slide 15: Final Scene -->
-        <div class="slide">
+        <div class="slide fit-screen">
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -2509,7 +2654,7 @@
                 <div class="slide-title">RIVERPLACE — ДУБНА</div>
                 <div class="iphone-frame">
                     <div class="iphone-screen">
-                        <video src="assets/final_glamping.mp4" autoplay muted loop playsinline></video>
+                        <video data-src="assets/final_glamping.mp4" poster="assets/final_glamping_poster.jpg" autoplay muted loop playsinline preload="none"></video>
                     </div>
                 </div>
             </div>
@@ -2531,6 +2676,7 @@
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
         let timelineRaf = null;
+        let initialVideoLoad = true;
 
         function animateTimelineValues() {
             const revenueEl = document.getElementById('live-revenue');
@@ -2564,6 +2710,28 @@
             timelineRaf = requestAnimationFrame(step);
         }
 
+        function syncSlideVideos() {
+            slides.forEach((slide, index) => {
+                const shouldPlay = index === currentSlide;
+                slide.querySelectorAll('video[data-src]').forEach(video => {
+                    if (shouldPlay) {
+                        if (!video.getAttribute('src')) {
+                            const dataSrc = video.getAttribute('data-src');
+                            if (dataSrc) {
+                                video.setAttribute('src', dataSrc);
+                                video.load();
+                            }
+                        }
+                        video.play().catch(() => {});
+                    } else {
+                        video.pause();
+                        video.removeAttribute('src');
+                        video.load();
+                    }
+                });
+            });
+        }
+
         function showSlide(n) {
             if (n >= totalSlides) currentSlide = 0;
             if (n < 0) currentSlide = totalSlides - 1;
@@ -2586,6 +2754,13 @@
             slides[currentSlide].scrollTop = 0;
             const contentEl = slides[currentSlide].querySelector('.content');
             if (contentEl) contentEl.scrollTop = 0;
+
+            if (initialVideoLoad) {
+                initialVideoLoad = false;
+                requestAnimationFrame(syncSlideVideos);
+            } else {
+                syncSlideVideos();
+            }
             
             document.getElementById('current-slide').textContent = currentSlide + 1;
             
@@ -2615,12 +2790,12 @@
             }
         });
 
-        // Inject ambient video background into slides 2-16
+        // Inject ambient video background into slides 2-16 (lazy-loaded)
         slides.forEach((slide, index) => {
             if (index >= 1 && !slide.querySelector('.ambient-video')) {
                 const ambient = document.createElement('div');
                 ambient.className = 'ambient-video';
-                ambient.innerHTML = '<video src="assets/final_glamping.mp4" autoplay muted loop playsinline></video>';
+                ambient.innerHTML = '<video data-src="assets/final_glamping.mp4" poster="assets/final_glamping_poster.jpg" muted loop playsinline preload="none"></video>';
                 slide.appendChild(ambient);
             }
         });
