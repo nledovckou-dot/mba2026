@@ -223,6 +223,15 @@
             border-radius: 24px;
         }
 
+        .hero-overlay::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.62) 38%, rgba(255,255,255,0.35) 100%);
+            border-radius: 24px;
+            z-index: 0;
+        }
+
         .hero-overlay .slide-title,
         .hero-overlay .slide-subtitle {
             color: var(--primary);
@@ -269,6 +278,13 @@
         .logo-circle svg {
             width: 100%;
             height: 100%;
+        }
+
+        .logo-circle img.logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .logo-text {
@@ -701,12 +717,15 @@
             color: #333;
             position: absolute;
             left: 18px;
-            bottom: 14px;
+            top: 120px;
+            bottom: auto;
             z-index: 3;
             background: rgba(255, 255, 255, 0.92);
             padding: 8px 10px;
             border-radius: 12px;
             box-shadow: var(--soft-shadow);
+            max-width: 220px;
+            pointer-events: none;
         }
 
         .fit-screen .timeline-legend {
@@ -1515,6 +1534,40 @@
                 margin-top: 10px;
             }
 
+        .hero-overlay {
+            padding: 14px 14px 18px;
+        }
+
+        .hero-overlay::before {
+            background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.35) 100%);
+        }
+
+        .hero-overlay .slide-title,
+        .hero-overlay .slide-subtitle,
+        .hero-overlay .hero-caption {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-slide .slide-title {
+            font-size: 20px !important;
+            line-height: 1.15;
+            margin-bottom: 8px !important;
+            max-width: 92%;
+        }
+
+        .hero-slide .slide-subtitle {
+            font-size: 14px !important;
+            line-height: 1.25;
+            margin-bottom: 8px !important;
+            max-width: 92%;
+        }
+
+        .hero-overlay .hero-caption {
+            font-size: 11px;
+            max-width: 92%;
+        }
+
             .fit-screen .timeline-chart {
                 height: 300px;
             }
@@ -1681,11 +1734,19 @@
             }
 
             .hero-slide .slide-title {
-                font-size: 20px;
+                font-size: 18px !important;
             }
 
             .hero-slide .slide-subtitle {
-                font-size: 15px;
+                font-size: 13px !important;
+            }
+
+            .hero-overlay {
+                padding: 12px 12px 16px;
+            }
+
+            .hero-overlay .hero-caption {
+                font-size: 10px;
             }
 
             .fit-screen .timeline-chart {
@@ -2677,6 +2738,25 @@
         const totalSlides = slides.length;
         let timelineRaf = null;
         let initialVideoLoad = true;
+
+        // Replace SVG logo with image when available
+        document.querySelectorAll('.logo-circle').forEach((logo) => {
+            const existingImg = logo.querySelector('img.logo-img');
+            if (existingImg) return;
+            const svg = logo.querySelector('svg');
+            const img = document.createElement('img');
+            img.className = 'logo-img';
+            img.alt = 'Высшая школа экономики';
+            img.src = 'assets/hse_logo.png';
+            img.onload = () => {
+                if (svg) svg.style.display = 'none';
+            };
+            img.onerror = () => {
+                img.remove();
+                if (svg) svg.style.display = 'block';
+            };
+            logo.insertBefore(img, svg || null);
+        });
 
         function animateTimelineValues() {
             const revenueEl = document.getElementById('live-revenue');
