@@ -242,20 +242,28 @@
             background-size: 220% 100%;
             background-clip: text;
             -webkit-background-clip: text;
-            animation: heroTitleShift 6s ease-in-out infinite;
-            text-shadow: 0 8px 18px rgba(11, 27, 77, 0.22);
-        }
-
-        @keyframes heroTitleShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            animation: heroTitleShift 7s ease-in-out infinite;
+            -webkit-text-stroke: 0.7px rgba(255, 255, 255, 0.6);
+            text-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.55),
+                0 2px 6px rgba(11, 27, 77, 0.28),
+                0 10px 20px rgba(11, 27, 77, 0.2);
+            padding: 0 18px;
+            max-width: 92%;
+            text-wrap: balance;
+            word-break: keep-all;
         }
 
         .hero-overlay .hero-caption {
             font-size: 20px;
             color: rgba(11, 27, 77, 0.8);
             margin-top: 24px;
+        }
+
+        @keyframes heroTitleShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Header with logo */
@@ -1536,11 +1544,13 @@
                 font-size: 22px;
                 line-height: 1.2;
                 margin-bottom: 10px;
+                padding: 0 16px;
             }
 
             .hero-slide .slide-subtitle {
                 font-size: 16px;
                 margin-bottom: 10px;
+                padding: 0 16px;
             }
 
             .hero-overlay .hero-caption {
@@ -1715,10 +1725,12 @@
 
             .hero-slide .slide-title {
                 font-size: 20px;
+                padding: 0 14px;
             }
 
             .hero-slide .slide-subtitle {
                 font-size: 15px;
+                padding: 0 14px;
             }
 
             .fit-screen .timeline-chart {
@@ -1749,7 +1761,7 @@
         <!-- Slide 1: Title -->
         <div class="slide active hero-slide fit-screen">
             <div class="hero-video">
-                <video src="assets/hero_slide1.mp4" poster="assets/hero_slide1_poster.jpg" autoplay muted loop playsinline preload="auto"></video>
+                <video src="assets/hero_slide1.mp4" poster="assets/hero_slide1_poster.jpg" autoplay muted loop playsinline preload="auto" playsinline webkit-playsinline disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback"></video>
             </div>
             <div class="hero-overlay">
                 <div class="header">
@@ -1773,9 +1785,7 @@
                 <div class="content" style="justify-content: center; align-items: center; text-align: center;">
                     <div class="slide-title" style="font-size: 56px; margin-bottom: 20px;">B2B ПЛАТФОРМА КОЛЛАБОРАЦИЙ</div>
                     <div class="slide-subtitle" style="font-size: 36px; margin-bottom: 25px;">RiverPlace: природа, размещение, инфраструктура</div>
-                    <div class="hero-caption">
-                        Модель загрузки через партнеров без собственной базы
-                    </div>
+                    <!-- Hero caption removed -->
                 </div>
                 <div class="footer"></div>
             </div>
@@ -2794,7 +2804,10 @@
             heroVideo.removeAttribute('controls');
             heroVideo.setAttribute('muted', '');
             heroVideo.setAttribute('playsinline', '');
+            heroVideo.setAttribute('webkit-playsinline', '');
             heroVideo.setAttribute('autoplay', '');
+            heroVideo.setAttribute('disablepictureinpicture', '');
+            heroVideo.setAttribute('controlslist', 'nodownload noplaybackrate noremoteplayback');
 
             const tryPlay = () => {
                 heroVideo.play().catch(() => {});
