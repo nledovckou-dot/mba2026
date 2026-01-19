@@ -209,6 +209,18 @@
             filter: saturate(1.05) contrast(1.02);
         }
 
+        .hero-video video {
+            pointer-events: none;
+        }
+
+        .hero-video video::-webkit-media-controls,
+        .hero-video video::-webkit-media-controls-panel,
+        .hero-video video::-webkit-media-controls-start-playback-button,
+        .hero-video video::-webkit-media-controls-play-button {
+            display: none !important;
+            -webkit-appearance: none;
+        }
+
         .hero-overlay {
             position: relative;
             z-index: 1;
@@ -2780,6 +2792,9 @@
             heroVideo.playsInline = true;
             heroVideo.loop = true;
             heroVideo.removeAttribute('controls');
+            heroVideo.setAttribute('muted', '');
+            heroVideo.setAttribute('playsinline', '');
+            heroVideo.setAttribute('autoplay', '');
 
             const tryPlay = () => {
                 heroVideo.play().catch(() => {});
@@ -2787,10 +2802,12 @@
 
             heroVideo.addEventListener('loadeddata', tryPlay);
             heroVideo.addEventListener('canplay', tryPlay);
+            heroVideo.addEventListener('loadedmetadata', tryPlay);
 
             // iOS fallback: first user interaction
             document.addEventListener('touchstart', tryPlay, { once: true });
             document.addEventListener('click', tryPlay, { once: true });
+            setTimeout(tryPlay, 250);
         }
 
         function showSlide(n) {
