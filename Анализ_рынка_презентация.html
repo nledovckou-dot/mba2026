@@ -227,9 +227,9 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.62) 38%, rgba(255,255,255,0.35) 100%);
             border-radius: 24px;
             z-index: 0;
+            display: none;
         }
 
         .hero-overlay .slide-title,
@@ -1534,39 +1534,40 @@
                 margin-top: 10px;
             }
 
-        .hero-overlay {
-            padding: 14px 14px 18px;
-        }
+            .hero-overlay {
+                padding: 14px 14px 18px;
+            }
 
-        .hero-overlay::before {
-            background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.35) 100%);
-        }
+            .hero-overlay::before {
+                display: block;
+                background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.35) 100%);
+            }
 
-        .hero-overlay .slide-title,
-        .hero-overlay .slide-subtitle,
-        .hero-overlay .hero-caption {
-            position: relative;
-            z-index: 1;
-        }
+            .hero-overlay .slide-title,
+            .hero-overlay .slide-subtitle,
+            .hero-overlay .hero-caption {
+                position: relative;
+                z-index: 1;
+            }
 
-        .hero-slide .slide-title {
-            font-size: 20px !important;
-            line-height: 1.15;
-            margin-bottom: 8px !important;
-            max-width: 92%;
-        }
+            .hero-slide .slide-title {
+                font-size: 20px !important;
+                line-height: 1.15;
+                margin-bottom: 8px !important;
+                max-width: 92%;
+            }
 
-        .hero-slide .slide-subtitle {
-            font-size: 14px !important;
-            line-height: 1.25;
-            margin-bottom: 8px !important;
-            max-width: 92%;
-        }
+            .hero-slide .slide-subtitle {
+                font-size: 14px !important;
+                line-height: 1.25;
+                margin-bottom: 8px !important;
+                max-width: 92%;
+            }
 
-        .hero-overlay .hero-caption {
-            font-size: 11px;
-            max-width: 92%;
-        }
+            .hero-overlay .hero-caption {
+                font-size: 11px;
+                max-width: 92%;
+            }
 
             .fit-screen .timeline-chart {
                 height: 300px;
