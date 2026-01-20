@@ -436,6 +436,10 @@
             margin-top: 10px;
         }
 
+        .icon-grid.two-columns-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         .partner-mosaic {
             grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 16px;
@@ -451,6 +455,73 @@
 
         .partner-mosaic .icon-text {
             font-size: 12px;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 22px;
+        }
+
+        .audience-card {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(26, 35, 126, 0.08);
+            border-radius: 14px;
+            padding: 16px;
+            box-shadow: var(--soft-shadow);
+        }
+
+        .audience-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .audience-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .audience-tag {
+            background: rgba(26, 35, 126, 0.08);
+            color: #1a237e;
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+        }
+
+        .audience-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .audience-list li {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .audience-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary);
+        }
+
+        .audience-note {
+            background: rgba(255, 235, 238, 0.7);
+            border-left: 4px solid #ef5350;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            color: #333;
         }
 
         .packages-slide .stat-box {
@@ -764,6 +835,44 @@
             gap: 8px;
         }
 
+        .month-chart {
+            width: 100%;
+            height: 360px;
+        }
+
+        .month-chart .month-bar {
+            transform-origin: center bottom;
+            transform: scaleY(0);
+        }
+
+        .month-chart.animate .month-bar {
+            animation: barGrow 1.2s ease forwards;
+        }
+
+        @keyframes barGrow {
+            to { transform: scaleY(1); }
+        }
+
+        .month-legend {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .month-legend span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .month-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
         .timeline-dot {
             width: 12px;
             height: 12px;
@@ -964,6 +1073,19 @@
             box-shadow: 0 30px 80px rgba(8, 12, 28, 0.4);
             margin: 0 auto;
             animation: floatPhone 6s ease-in-out infinite;
+        }
+
+        .final-scene .iphone-frame {
+            margin-top: 16px;
+            max-width: 640px;
+        }
+
+        .final-scene .slide-title {
+            margin-bottom: 0;
+        }
+
+        .final-scene .content {
+            gap: 0;
         }
 
         .iphone-frame::before {
@@ -1431,6 +1553,11 @@
                 margin-top: 15px;
             }
 
+            .audience-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
             .flow {
                 grid-template-columns: 1fr;
                 gap: 10px;
@@ -1544,13 +1671,13 @@
                 font-size: 22px;
                 line-height: 1.2;
                 margin-bottom: 10px;
-                padding: 0 16px;
+                padding: 0 3vw;
             }
 
             .hero-slide .slide-subtitle {
                 font-size: 16px;
                 margin-bottom: 10px;
-                padding: 0 16px;
+                padding: 0 3vw;
             }
 
             .hero-overlay .hero-caption {
@@ -1559,6 +1686,10 @@
             }
 
             .fit-screen .timeline-chart {
+                height: 300px;
+            }
+
+            .month-chart {
                 height: 300px;
             }
 
@@ -1725,12 +1856,12 @@
 
             .hero-slide .slide-title {
                 font-size: 20px;
-                padding: 0 14px;
+                padding: 0 3vw;
             }
 
             .hero-slide .slide-subtitle {
                 font-size: 15px;
-                padding: 0 14px;
+                padding: 0 3vw;
             }
 
             .fit-screen .timeline-chart {
@@ -1783,9 +1914,8 @@
                     </div>
                 </div>
                 <div class="content" style="justify-content: center; align-items: center; text-align: center;">
-                    <div class="slide-title" style="font-size: 56px; margin-bottom: 20px;">B2B ПЛАТФОРМА КОЛЛАБОРАЦИЙ</div>
-                    <div class="slide-subtitle" style="font-size: 36px; margin-bottom: 25px;">RiverPlace: природа, размещение, инфраструктура</div>
-                    <!-- Hero caption removed -->
+                    <div class="slide-title" style="font-size: 64px; margin-bottom: 18px;">RiverPlace</div>
+                    <div class="slide-subtitle" style="font-size: 32px; margin-bottom: 10px;">RiverPlace — отдых, который возвращает ресурс</div>
                 </div>
                 <div class="footer"></div>
             </div>
@@ -1818,6 +1948,11 @@
                         <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
                         <div class="icon-title">Сезонность</div>
                         <div class="icon-text">Пики по выходным, провалы в будни</div>
+                    </div>
+                    <div class="icon-card">
+                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
+                        <div class="icon-title">Плохое знание продукта</div>
+                        <div class="icon-text">Глэмпинг не в топ‑of‑mind у аудитории</div>
                     </div>
                     <div class="icon-card">
                         <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=200&q=80');"></div>
@@ -1908,6 +2043,69 @@
                 </div>
                 <div class="highlight-box whitespace">
                     <p><strong>Вывод:</strong> спрос формируется через знакомые категории «отели» и «дома», а не только «глэмпинг».</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Audience & Intent -->
+        <div class="slide">
+            <div class="header">
+                <div class="logo-section">
+                    <div class="logo-circle">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
+                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-text">Программа МВА</div>
+                    <div class="header-divider"></div>
+                    <div class="header-text">Москва 2026</div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="slide-title">АУДИТОРИЯ И ЗАПРОС «ПЕРЕЗАГРУЗКИ»</div>
+                <div class="audience-grid">
+                    <div class="audience-card">
+                        <div class="audience-title">Что ищут (по смыслу запроса)</div>
+                        <ul class="audience-list">
+                            <li>Перезагрузка, восстановление, сон, стресс‑менеджмент.</li>
+                            <li>Структурированные программы «сказали — сделал».</li>
+                            <li>Доказуемый эффект, а не «просто смена картинки».</li>
+                            <li>Минимум бытовых решений, высокий уровень сервиса.</li>
+                            <li>Природа как инструмент восстановления.</li>
+                        </ul>
+                        <div class="audience-title" style="margin-top: 14px;">Ключевые поисковые смыслы</div>
+                        <div class="audience-tags">
+                            <span class="audience-tag">ретрит</span>
+                            <span class="audience-tag">перезагрузка</span>
+                            <span class="audience-tag">восстановление</span>
+                            <span class="audience-tag">сон</span>
+                            <span class="audience-tag">выгорание</span>
+                            <span class="audience-tag">wellness‑программа</span>
+                            <span class="audience-tag">антистресс</span>
+                        </div>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-title">Основные сегменты</div>
+                        <ul class="audience-list">
+                            <li><strong>B2C:</strong> перегруженные профи 30–45 (главный платёжеспособный сегмент).</li>
+                            <li><strong>B2C:</strong> wellness‑ориентированные 28–50 (через экспертов).</li>
+                            <li><strong>B2B:</strong> HR/компании — профилактика выгорания, offsite, retreat.</li>
+                            <li><strong>Институты влияния:</strong> психологи, коучи, sleep‑эксперты.</li>
+                            <li><strong>Высокий доход:</strong> приватность, «умный комфорт».</li>
+                        </ul>
+                        <div class="audience-note" style="margin-top: 12px;">
+                            <strong>Не ЦА:</strong> семьи с маленькими детьми, молодежь «по тусовкам», «дешёвый уикенд», массовый Booking‑трафик.
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-box whitespace">
+                    <p><strong>Формула ЦА:</strong> люди и компании, которым нужен измеримый эффект восстановления, а не «просто отдых».</p>
                 </div>
             </div>
         </div>
@@ -2248,27 +2446,151 @@
             </div>
             <div class="content">
                 <div class="slide-title">КАНАЛЫ ПРОДАЖ И ЗАГРУЗКА</div>
-                <div class="icon-grid">
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Outreach</div>
-                        <div class="icon-text">Нишевые сообщества и лидеры</div>
+                <div class="two-columns">
+                    <div class="section">
+                        <div class="section-title">B2B: прямые продажи партнёрам</div>
+                        <div class="icon-grid two-columns-grid">
+                            <div class="icon-card">
+                                <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=200&q=80');"></div>
+                                <div class="icon-title">Прямые продажи</div>
+                                <div class="icon-text">Корпоративы, HR‑департаменты</div>
+                            </div>
+                            <div class="icon-card">
+                                <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=200&q=80');"></div>
+                                <div class="icon-title">Партнерские рекомендации</div>
+                                <div class="icon-text">Эксперты и институты влияния</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Партнерские рекомендации</div>
-                        <div class="icon-text">Сарафан внутри рынка</div>
+                    <div class="section">
+                        <div class="section-title">B2C: прямые каналы</div>
+                        <div class="icon-grid two-columns-grid">
+                            <div class="icon-card">
+                                <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=200&q=80');"></div>
+                                <div class="icon-title">Авито</div>
+                                <div class="icon-text">Спрос на короткие заезды</div>
+                            </div>
+                            <div class="icon-card">
+                                <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
+                                <div class="icon-title">Яндекс.Путешествия</div>
+                                <div class="icon-text">Поиск отдыха и ретритов</div>
+                            </div>
+                            <div class="icon-card">
+                                <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
+                                <div class="icon-title">Социальные сети</div>
+                                <div class="icon-text">Контент и личные рекомендации</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Календарь 6 мес.</div>
-                        <div class="icon-text">Предоплата за закрепление дат</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Monthly Load Mix -->
+        <div class="slide">
+            <div class="header">
+                <div class="logo-section">
+                    <div class="logo-circle">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
+                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
+                        </svg>
                     </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Остатки в розницу</div>
-                        <div class="icon-text">Last‑minute и короткие заезды</div>
+                    <div class="logo-text">
+                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
                     </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-text">Программа МВА</div>
+                    <div class="header-divider"></div>
+                    <div class="header-text">Москва 2026</div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="slide-title">ПРОГНОЗ ЗАГРУЗКИ ПО ДНЯМ МЕСЯЦА</div>
+                <svg class="month-chart" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" aria-label="Загрузка B2B и B2C по дням месяца">
+                    <line x1="60" y1="300" x2="840" y2="300" stroke="#cfd8dc" stroke-width="2"/>
+                    <line x1="60" y1="80" x2="60" y2="300" stroke="#cfd8dc" stroke-width="2"/>
+                    <text x="40" y="304" font-size="12" fill="#667">0%</text>
+                    <text x="32" y="224" font-size="12" fill="#667">40%</text>
+                    <text x="32" y="144" font-size="12" fill="#667">70%</text>
+                    <text x="32" y="84" font-size="12" fill="#667">100%</text>
+
+                    <!-- Bars (B2B bottom, B2C top) -->
+                    <g fill="#1a237e" opacity="0.85">
+                        <rect class="month-bar" x="70" y="160" width="16" height="140" style="animation-delay:0s"/>
+                        <rect class="month-bar" x="94" y="150" width="16" height="150" style="animation-delay:0.04s"/>
+                        <rect class="month-bar" x="118" y="145" width="16" height="155" style="animation-delay:0.08s"/>
+                        <rect class="month-bar" x="142" y="140" width="16" height="160" style="animation-delay:0.12s"/>
+                        <rect class="month-bar" x="166" y="135" width="16" height="165" style="animation-delay:0.16s"/>
+                        <rect class="month-bar" x="190" y="130" width="16" height="170" style="animation-delay:0.2s"/>
+                        <rect class="month-bar" x="214" y="125" width="16" height="175" style="animation-delay:0.24s"/>
+                        <rect class="month-bar" x="238" y="120" width="16" height="180" style="animation-delay:0.28s"/>
+                        <rect class="month-bar" x="262" y="115" width="16" height="185" style="animation-delay:0.32s"/>
+                        <rect class="month-bar" x="286" y="130" width="16" height="170" style="animation-delay:0.36s"/>
+                        <rect class="month-bar" x="310" y="140" width="16" height="160" style="animation-delay:0.4s"/>
+                        <rect class="month-bar" x="334" y="145" width="16" height="155" style="animation-delay:0.44s"/>
+                        <rect class="month-bar" x="358" y="150" width="16" height="150" style="animation-delay:0.48s"/>
+                        <rect class="month-bar" x="382" y="155" width="16" height="145" style="animation-delay:0.52s"/>
+                        <rect class="month-bar" x="406" y="160" width="16" height="140" style="animation-delay:0.56s"/>
+                        <rect class="month-bar" x="430" y="150" width="16" height="150" style="animation-delay:0.6s"/>
+                        <rect class="month-bar" x="454" y="140" width="16" height="160" style="animation-delay:0.64s"/>
+                        <rect class="month-bar" x="478" y="130" width="16" height="170" style="animation-delay:0.68s"/>
+                        <rect class="month-bar" x="502" y="120" width="16" height="180" style="animation-delay:0.72s"/>
+                        <rect class="month-bar" x="526" y="110" width="16" height="190" style="animation-delay:0.76s"/>
+                        <rect class="month-bar" x="550" y="100" width="16" height="200" style="animation-delay:0.8s"/>
+                        <rect class="month-bar" x="574" y="105" width="16" height="195" style="animation-delay:0.84s"/>
+                        <rect class="month-bar" x="598" y="115" width="16" height="185" style="animation-delay:0.88s"/>
+                        <rect class="month-bar" x="622" y="125" width="16" height="175" style="animation-delay:0.92s"/>
+                        <rect class="month-bar" x="646" y="135" width="16" height="165" style="animation-delay:0.96s"/>
+                        <rect class="month-bar" x="670" y="145" width="16" height="155" style="animation-delay:1s"/>
+                        <rect class="month-bar" x="694" y="150" width="16" height="150" style="animation-delay:1.04s"/>
+                        <rect class="month-bar" x="718" y="155" width="16" height="145" style="animation-delay:1.08s"/>
+                        <rect class="month-bar" x="742" y="150" width="16" height="150" style="animation-delay:1.12s"/>
+                        <rect class="month-bar" x="766" y="140" width="16" height="160" style="animation-delay:1.16s"/>
+                    </g>
+                    <g fill="#90caf9" opacity="0.85">
+                        <rect class="month-bar" x="70" y="120" width="16" height="40" style="animation-delay:0s"/>
+                        <rect class="month-bar" x="94" y="115" width="16" height="35" style="animation-delay:0.04s"/>
+                        <rect class="month-bar" x="118" y="115" width="16" height="30" style="animation-delay:0.08s"/>
+                        <rect class="month-bar" x="142" y="95" width="16" height="45" style="animation-delay:0.12s"/>
+                        <rect class="month-bar" x="166" y="85" width="16" height="50" style="animation-delay:0.16s"/>
+                        <rect class="month-bar" x="190" y="75" width="16" height="55" style="animation-delay:0.2s"/>
+                        <rect class="month-bar" x="214" y="85" width="16" height="40" style="animation-delay:0.24s"/>
+                        <rect class="month-bar" x="238" y="85" width="16" height="35" style="animation-delay:0.28s"/>
+                        <rect class="month-bar" x="262" y="85" width="16" height="30" style="animation-delay:0.32s"/>
+                        <rect class="month-bar" x="286" y="85" width="16" height="45" style="animation-delay:0.36s"/>
+                        <rect class="month-bar" x="310" y="85" width="16" height="55" style="animation-delay:0.4s"/>
+                        <rect class="month-bar" x="334" y="85" width="16" height="60" style="animation-delay:0.44s"/>
+                        <rect class="month-bar" x="358" y="100" width="16" height="50" style="animation-delay:0.48s"/>
+                        <rect class="month-bar" x="382" y="110" width="16" height="45" style="animation-delay:0.52s"/>
+                        <rect class="month-bar" x="406" y="120" width="16" height="40" style="animation-delay:0.56s"/>
+                        <rect class="month-bar" x="430" y="115" width="16" height="35" style="animation-delay:0.6s"/>
+                        <rect class="month-bar" x="454" y="110" width="16" height="30" style="animation-delay:0.64s"/>
+                        <rect class="month-bar" x="478" y="90" width="16" height="40" style="animation-delay:0.68s"/>
+                        <rect class="month-bar" x="502" y="75" width="16" height="45" style="animation-delay:0.72s"/>
+                        <rect class="month-bar" x="526" y="60" width="16" height="50" style="animation-delay:0.76s"/>
+                        <rect class="month-bar" x="550" y="45" width="16" height="55" style="animation-delay:0.8s"/>
+                        <rect class="month-bar" x="574" y="55" width="16" height="50" style="animation-delay:0.84s"/>
+                        <rect class="month-bar" x="598" y="70" width="16" height="45" style="animation-delay:0.88s"/>
+                        <rect class="month-bar" x="622" y="85" width="16" height="40" style="animation-delay:0.92s"/>
+                        <rect class="month-bar" x="646" y="100" width="16" height="35" style="animation-delay:0.96s"/>
+                        <rect class="month-bar" x="670" y="115" width="16" height="30" style="animation-delay:1s"/>
+                        <rect class="month-bar" x="694" y="115" width="16" height="35" style="animation-delay:1.04s"/>
+                        <rect class="month-bar" x="718" y="110" width="16" height="40" style="animation-delay:1.08s"/>
+                        <rect class="month-bar" x="742" y="105" width="16" height="45" style="animation-delay:1.12s"/>
+                        <rect class="month-bar" x="766" y="90" width="16" height="50" style="animation-delay:1.16s"/>
+                    </g>
+
+                    <text x="70" y="330" font-size="11" fill="#667">1</text>
+                    <text x="230" y="330" font-size="11" fill="#667">7</text>
+                    <text x="390" y="330" font-size="11" fill="#667">14</text>
+                    <text x="550" y="330" font-size="11" fill="#667">21</text>
+                    <text x="750" y="330" font-size="11" fill="#667">30</text>
+                </svg>
+                <div class="month-legend">
+                    <span><i class="month-dot" style="background:#1a237e;"></i>B2B загрузка</span>
+                    <span><i class="month-dot" style="background:#90caf9;"></i>B2C загрузка</span>
                 </div>
             </div>
         </div>
@@ -2418,7 +2740,7 @@
                     </div>
                     <div class="metric-card">
                         <div class="metric-title">Средний чек</div>
-                        <div class="metric-number">7 500 руб</div>
+                        <div class="metric-number">32 500 руб</div>
                         <div class="metric-note">За человека/ночь</div>
                     </div>
                     <div class="metric-card">
@@ -2436,7 +2758,7 @@
                     <div class="section">
                         <div class="section-title">Инвестиции и OPEX</div>
                         <ul class="bullet-list">
-                            <li>Capex: 60 млн руб. (земля, домики, инфраструктура)</li>
+                            <li>Capex: 250 млн руб. (земля, домики, инфраструктура)</li>
                             <li>OPEX: 68% выручки (персонал, содержание, маркетинг)</li>
                         </ul>
                     </div>
@@ -2444,8 +2766,8 @@
                         <div class="section-title">Формула выручки</div>
                         <ul class="bullet-list">
                             <li>20 × 365 × 55% = 4 015 ночей</li>
-                            <li>4 015 × 7 500 = 30,1 млн руб.</li>
-                            <li>Доп. услуги +20% = 36,1 млн руб./год</li>
+                            <li>4 015 × 32 500 = 130,5 млн руб.</li>
+                            <li>Доп. услуги +20% = 156,6 млн руб./год</li>
                         </ul>
                     </div>
                 </div>
@@ -2477,28 +2799,26 @@
                 <div class="four-columns">
                     <div class="metric-card">
                         <div class="metric-title">Выручка, год 1</div>
-                        <div class="metric-number">30 млн</div>
-                        <div class="metric-note">Рост до 42 млн к году 5</div>
+                        <div class="metric-number">156 млн</div>
+                        <div class="metric-note">Рост до 195 млн к году 5</div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-title">EBITDA, год 1</div>
-                        <div class="metric-number">28%</div>
-                        <div class="metric-note">Маржа до 35% к году 5</div>
+                        <div class="metric-number">32%</div>
+                        <div class="metric-note">Маржа до 36% к году 5</div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-title">Окупаемость</div>
-                        <div class="metric-number">≈ 4,7 года</div>
+                        <div class="metric-number">≈ 5 лет</div>
                         <div class="metric-note">По накопленному ROI</div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-title">ROI, год 5</div>
-                        <div class="metric-number">115%</div>
+                        <div class="metric-number">100%</div>
                         <div class="metric-note">Цель устойчивости</div>
                     </div>
                 </div>
-                <div class="highlight-box whitespace">
-                    <p><strong>Ключевое:</strong> график таймлайна — на слайде 13, с анимацией роста за 10 секунд.</p>
-                </div>
+                <div class="highlight-box whitespace" style="display: none;"></div>
             </div>
         </div>
 
@@ -2550,10 +2870,10 @@
                         <line x1="80" y1="100" x2="820" y2="100" stroke="#e5e7eb" stroke-dasharray="4 4"/>
                         <!-- left labels -->
                         <text x="34" y="344" font-size="12" fill="#667">0</text>
-                        <text x="28" y="284" font-size="12" fill="#667">10</text>
-                        <text x="28" y="224" font-size="12" fill="#667">20</text>
-                        <text x="28" y="164" font-size="12" fill="#667">30</text>
-                        <text x="28" y="104" font-size="12" fill="#667">40</text>
+                        <text x="22" y="284" font-size="12" fill="#667">50</text>
+                        <text x="18" y="224" font-size="12" fill="#667">100</text>
+                        <text x="18" y="164" font-size="12" fill="#667">150</text>
+                        <text x="18" y="104" font-size="12" fill="#667">200</text>
                         <!-- right labels -->
                         <text x="832" y="344" font-size="12" fill="#667">0%</text>
                         <text x="828" y="284" font-size="12" fill="#667">25%</text>
@@ -2569,47 +2889,47 @@
 
                         <!-- Revenue line (млн руб.) -->
                         <polyline class="line" pathLength="100" stroke="#1a237e"
-                            points="120,190 280,175 440,160 600,145 760,130"/>
-                        <circle class="chart-point" cx="120" cy="190" r="6" fill="#1a237e" style="animation-delay: 1.4s;">
-                            <title>Год 1: выручка 30 млн</title>
+                            points="120,106 280,92 440,78 600,63 760,48"/>
+                        <circle class="chart-point" cx="120" cy="106" r="6" fill="#1a237e" style="animation-delay: 1.4s;">
+                            <title>Год 1: выручка 156 млн</title>
                         </circle>
-                        <circle class="chart-point" cx="280" cy="175" r="6" fill="#1a237e" style="animation-delay: 3s;">
-                            <title>Год 2: выручка 33 млн</title>
+                        <circle class="chart-point" cx="280" cy="92" r="6" fill="#1a237e" style="animation-delay: 3s;">
+                            <title>Год 2: выручка 165 млн</title>
                         </circle>
-                        <circle class="chart-point" cx="440" cy="160" r="6" fill="#1a237e" style="animation-delay: 4.6s;">
-                            <title>Год 3: выручка 36 млн</title>
+                        <circle class="chart-point" cx="440" cy="78" r="6" fill="#1a237e" style="animation-delay: 4.6s;">
+                            <title>Год 3: выручка 175 млн</title>
                         </circle>
-                        <circle class="chart-point" cx="600" cy="145" r="6" fill="#1a237e" style="animation-delay: 6.2s;">
-                            <title>Год 4: выручка 39 млн</title>
+                        <circle class="chart-point" cx="600" cy="63" r="6" fill="#1a237e" style="animation-delay: 6.2s;">
+                            <title>Год 4: выручка 185 млн</title>
                         </circle>
-                        <circle class="chart-point" cx="760" cy="130" r="6" fill="#1a237e" style="animation-delay: 7.8s;">
-                            <title>Год 5: выручка 42 млн</title>
+                        <circle class="chart-point" cx="760" cy="48" r="6" fill="#1a237e" style="animation-delay: 7.8s;">
+                            <title>Год 5: выручка 195 млн</title>
                         </circle>
 
                         <!-- EBITDA margin line (%) -->
                         <polyline class="line" pathLength="100" stroke="#42a5f5"
-                            points="120,295 280,288 440,280 600,272 760,265"/>
-                        <circle class="chart-point" cx="120" cy="295" r="6" fill="#42a5f5" style="animation-delay: 1.8s;">
-                            <title>Год 1: EBITDA 28%</title>
+                            points="120,244 280,241 440,238 600,235 760,232"/>
+                        <circle class="chart-point" cx="120" cy="244" r="6" fill="#42a5f5" style="animation-delay: 1.8s;">
+                            <title>Год 1: EBITDA 32%</title>
                         </circle>
-                        <circle class="chart-point" cx="280" cy="288" r="6" fill="#42a5f5" style="animation-delay: 3.4s;">
-                            <title>Год 2: EBITDA 30%</title>
+                        <circle class="chart-point" cx="280" cy="241" r="6" fill="#42a5f5" style="animation-delay: 3.4s;">
+                            <title>Год 2: EBITDA 33%</title>
                         </circle>
-                        <circle class="chart-point" cx="440" cy="280" r="6" fill="#42a5f5" style="animation-delay: 5s;">
-                            <title>Год 3: EBITDA 32%</title>
+                        <circle class="chart-point" cx="440" cy="238" r="6" fill="#42a5f5" style="animation-delay: 5s;">
+                            <title>Год 3: EBITDA 34%</title>
                         </circle>
-                        <circle class="chart-point" cx="600" cy="272" r="6" fill="#42a5f5" style="animation-delay: 6.6s;">
-                            <title>Год 4: EBITDA 34%</title>
+                        <circle class="chart-point" cx="600" cy="235" r="6" fill="#42a5f5" style="animation-delay: 6.6s;">
+                            <title>Год 4: EBITDA 35%</title>
                         </circle>
-                        <circle class="chart-point" cx="760" cy="265" r="6" fill="#42a5f5" style="animation-delay: 8.2s;">
-                            <title>Год 5: EBITDA 35%</title>
+                        <circle class="chart-point" cx="760" cy="232" r="6" fill="#42a5f5" style="animation-delay: 8.2s;">
+                            <title>Год 5: EBITDA 36%</title>
                         </circle>
 
                         <!-- ROI cumulative line (%) -->
                         <polyline class="line" pathLength="100" stroke="#ff9800"
-                            points="120,310 280,265 440,220 600,175 760,130"/>
-                        <circle class="chart-point" cx="600" cy="175" r="7" fill="#ff9800" style="animation-delay: 7.2s;">
-                            <title>Точка окупаемости: 4,7 год</title>
+                            points="120,295 280,235 440,160 600,100 760,40"/>
+                        <circle class="chart-point" cx="760" cy="40" r="7" fill="#ff9800" style="animation-delay: 7.2s;">
+                            <title>Точка окупаемости: 5 год</title>
                         </circle>
 
                         <g class="callout" style="animation-delay: 0.6s;">
@@ -2625,7 +2945,7 @@
                         <g class="callout" style="animation-delay: 2.2s;">
                             <rect x="560" y="180" width="230" height="52" rx="18" fill="#ffffff" stroke="#dfe5f3"/>
                             <text x="576" y="202" font-size="12" fill="#1a237e" font-weight="600">Окупаемость</text>
-                            <text x="576" y="218" font-size="12" fill="#4a5568">~4,7 года, ROI 115%</text>
+                            <text x="576" y="218" font-size="12" fill="#4a5568">~5 лет, ROI 100%</text>
                         </g>
                     </svg>
                     <div class="payback-burst" aria-hidden="true">
@@ -2666,15 +2986,15 @@
                 <ul class="bullet-list">
                     <li><strong>Анализ рынка:</strong> высокая сезонность и перегрев B2C требуют устойчивой B2B‑загрузки</li>
                     <li><strong>Концепция:</strong> платформа коллабораций с партнерами без собственной базы</li>
-                    <li><strong>Финансовые показатели:</strong> выручка 36,1 млн руб./год при загрузке 55%</li>
-                    <li><strong>Окупаемость:</strong> 5,2 года в базовом сценарии</li>
-                    <li><strong>EBITDA %:</strong> 32% (≈ 11,6 млн руб./год)</li>
+                    <li><strong>Финансовые показатели:</strong> выручка 156,6 млн руб./год при загрузке 55%</li>
+                    <li><strong>Окупаемость:</strong> 5 лет при Capex 250 млн</li>
+                    <li><strong>EBITDA %:</strong> 32% (≈ 50 млн руб./год)</li>
                 </ul>
             </div>
         </div>
 
         <!-- Slide 15: Final Scene -->
-        <div class="slide fit-screen">
+        <div class="slide fit-screen final-scene">
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -2705,7 +3025,7 @@
     </div>
 
     <div class="slide-counter">
-        <span id="current-slide">1</span> / 17
+        <span id="current-slide">1</span> / 18
     </div>
     <!-- Updated: 2026-01-18 - Возвращен Wordstat и обновлен титульный -->
 
@@ -2748,8 +3068,8 @@
 
             const duration = 10000;
             const start = performance.now();
-            const startValues = { revenue: 30, ebitda: 28, roi: 20 };
-            const endValues = { revenue: 42, ebitda: 35, roi: 115 };
+            const startValues = { revenue: 156, ebitda: 32, roi: 15 };
+            const endValues = { revenue: 195, ebitda: 36, roi: 100 };
 
             const step = (now) => {
                 const progress = Math.min((now - start) / duration, 1);
@@ -2759,7 +3079,7 @@
                 const ebitda = startValues.ebitda + (endValues.ebitda - startValues.ebitda) * ease;
                 const roi = startValues.roi + (endValues.roi - startValues.roi) * ease;
 
-                revenueEl.textContent = `${revenue.toFixed(1)} млн`;
+                revenueEl.textContent = `${revenue.toFixed(0)} млн`;
                 ebitdaEl.textContent = `${ebitda.toFixed(0)}%`;
                 roiEl.textContent = `${roi.toFixed(0)}%`;
 
@@ -2839,6 +3159,16 @@
             if (timeline) {
                 timeline.classList.add('animate');
                 animateTimelineValues();
+            }
+
+            // Trigger month chart animation
+            document.querySelectorAll('.month-chart').forEach(chart => {
+                chart.classList.remove('animate');
+                void chart.offsetWidth;
+            });
+            const monthChart = slides[currentSlide].querySelector('.month-chart');
+            if (monthChart) {
+                monthChart.classList.add('animate');
             }
 
             // Reset scroll for new slide content
