@@ -515,6 +515,31 @@
             color: var(--primary);
         }
 
+        .compact-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            gap: 6px;
+        }
+
+        .compact-list li {
+            font-size: 12.5px;
+            color: #333;
+            line-height: 1.5;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .compact-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary);
+            font-size: 16px;
+            line-height: 1;
+        }
+
         .audience-note {
             background: rgba(255, 235, 238, 0.7);
             border-left: 4px solid #ef5350;
@@ -525,21 +550,34 @@
         }
 
         .packages-slide .stat-box {
-            padding: 16px;
+            padding: 12px;
         }
 
         .packages-slide .stat-number {
-            font-size: 30px;
+            font-size: 24px;
         }
 
         .packages-slide .stat-label,
         .packages-slide .stat-growth {
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .packages-slide .key-point {
             margin-top: 12px !important;
             padding: 12px;
+        }
+
+        .packages-slide .three-columns {
+            gap: 12px;
+        }
+
+        .packages-slide .compact-list li {
+            font-size: 11px;
+            line-height: 1.35;
+        }
+
+        .packages-slide .highlight-box {
+            padding: 14px;
         }
 
         .packages-slide .key-point,
@@ -1974,6 +2012,9 @@
                     <strong>Вывод:</strong> нужна предсказуемая B2B‑загрузка, а не только розничные брони.
                 </div>
             </div>
+            <div class="footer">
+                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над информацией работала: Фидан</div>
+            </div>
         </div>
 
         <!-- Slide 3: Wordstat Pie -->
@@ -2045,6 +2086,9 @@
                     <p><strong>Вывод:</strong> спрос формируется через знакомые категории «отели» и «дома», а не только «глэмпинг».</p>
                 </div>
             </div>
+            <div class="footer">
+                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над информацией работал: Николай</div>
+            </div>
         </div>
 
         <!-- Slide 4: Audience & Intent -->
@@ -2068,30 +2112,18 @@
                 </div>
             </div>
             <div class="content">
-                <div class="slide-title">АУДИТОРИЯ И ЗАПРОС «ПЕРЕЗАГРУЗКИ»</div>
+                <div class="slide-title">АНАЛИЗ ЦЕЛЕВОЙ АУДИТОРИИ</div>
                 <div class="audience-grid">
                     <div class="audience-card">
-                        <div class="audience-title">Что ищут (по смыслу запроса)</div>
+                        <div class="audience-title">Анализ целевой аудитории B2B</div>
                         <ul class="audience-list">
-                            <li>Перезагрузка, восстановление, сон, стресс‑менеджмент.</li>
-                            <li>Структурированные программы «сказали — сделал».</li>
-                            <li>Доказуемый эффект, а не «просто смена картинки».</li>
-                            <li>Минимум бытовых решений, высокий уровень сервиса.</li>
-                            <li>Природа как инструмент восстановления.</li>
+                            <li>Значительный рост выездных программ и ретритов.</li>
+                            <li>Сегменты: йога‑студии, арт‑практики (рисование), wellness‑проекты, ретрит‑организаторы.</li>
+                            <li>Рост спроса на форматы «выезд + программа» за 10 лет: +1500%.</li>
                         </ul>
-                        <div class="audience-title" style="margin-top: 14px;">Ключевые поисковые смыслы</div>
-                        <div class="audience-tags">
-                            <span class="audience-tag">ретрит</span>
-                            <span class="audience-tag">перезагрузка</span>
-                            <span class="audience-tag">восстановление</span>
-                            <span class="audience-tag">сон</span>
-                            <span class="audience-tag">выгорание</span>
-                            <span class="audience-tag">wellness‑программа</span>
-                            <span class="audience-tag">антистресс</span>
-                        </div>
                     </div>
                     <div class="audience-card">
-                        <div class="audience-title">Основные сегменты</div>
+                        <div class="audience-title">Анализ целевой аудитории B2C — основные сегменты</div>
                         <ul class="audience-list">
                             <li><strong>B2C:</strong> перегруженные профи 30–45 (главный платёжеспособный сегмент).</li>
                             <li><strong>B2C:</strong> wellness‑ориентированные 28–50 (через экспертов).</li>
@@ -2105,8 +2137,15 @@
                     </div>
                 </div>
                 <div class="highlight-box whitespace">
-                    <p><strong>Формула ЦА:</strong> люди и компании, которым нужен измеримый эффект восстановления, а не «просто отдых».</p>
+                    <div class="section-title" style="margin-bottom: 10px;">Общие тренды форсайт‑анализа</div>
+                    <ul class="bullet-list">
+                        <li><strong>Рост интереса к устойчивому туризму (социальный тренд):</strong> горожане всё чаще ищут экологичный, спокойный отдых на природе. Спрос смещается в сторону глэмпинга и эко‑отелей, предлагающих минимальное вмешательство в окружающую среду и локальные практики.</li>
+                        <li><strong>Перераспределение доходов в пользу регионального туризма (экономический тренд):</strong> снижается интерес к заграничным поездкам и крупным курортам — бюджет туристов всё чаще направляется на внутренние поездки. Это открывает возможности для инвестиций в местные форматы отдыха — глэмпинг, фермы, эко‑маршруты.</li>
+                    </ul>
                 </div>
+            </div>
+            <div class="footer">
+                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над информацией работал: Виктор</div>
             </div>
         </div>
 
@@ -2486,8 +2525,8 @@
             </div>
         </div>
 
-        <!-- Slide 10: Monthly Load Mix -->
-        <div class="slide">
+        <!-- Slide 10: B2C Packages -->
+        <div class="slide packages-slide">
             <div class="header">
                 <div class="logo-section">
                     <div class="logo-circle">
@@ -2507,91 +2546,66 @@
                 </div>
             </div>
             <div class="content">
-                <div class="slide-title">ПРОГНОЗ ЗАГРУЗКИ ПО ДНЯМ МЕСЯЦА</div>
-                <svg class="month-chart" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" aria-label="Загрузка B2B и B2C по дням месяца">
-                    <line x1="60" y1="300" x2="840" y2="300" stroke="#cfd8dc" stroke-width="2"/>
-                    <line x1="60" y1="80" x2="60" y2="300" stroke="#cfd8dc" stroke-width="2"/>
-                    <text x="40" y="304" font-size="12" fill="#667">0%</text>
-                    <text x="32" y="224" font-size="12" fill="#667">40%</text>
-                    <text x="32" y="144" font-size="12" fill="#667">70%</text>
-                    <text x="32" y="84" font-size="12" fill="#667">100%</text>
-
-                    <!-- Bars (B2B bottom, B2C top) -->
-                    <g fill="#1a237e" opacity="0.85">
-                        <rect class="month-bar" x="70" y="160" width="16" height="140" style="animation-delay:0s"/>
-                        <rect class="month-bar" x="94" y="150" width="16" height="150" style="animation-delay:0.04s"/>
-                        <rect class="month-bar" x="118" y="145" width="16" height="155" style="animation-delay:0.08s"/>
-                        <rect class="month-bar" x="142" y="140" width="16" height="160" style="animation-delay:0.12s"/>
-                        <rect class="month-bar" x="166" y="135" width="16" height="165" style="animation-delay:0.16s"/>
-                        <rect class="month-bar" x="190" y="130" width="16" height="170" style="animation-delay:0.2s"/>
-                        <rect class="month-bar" x="214" y="125" width="16" height="175" style="animation-delay:0.24s"/>
-                        <rect class="month-bar" x="238" y="120" width="16" height="180" style="animation-delay:0.28s"/>
-                        <rect class="month-bar" x="262" y="115" width="16" height="185" style="animation-delay:0.32s"/>
-                        <rect class="month-bar" x="286" y="130" width="16" height="170" style="animation-delay:0.36s"/>
-                        <rect class="month-bar" x="310" y="140" width="16" height="160" style="animation-delay:0.4s"/>
-                        <rect class="month-bar" x="334" y="145" width="16" height="155" style="animation-delay:0.44s"/>
-                        <rect class="month-bar" x="358" y="150" width="16" height="150" style="animation-delay:0.48s"/>
-                        <rect class="month-bar" x="382" y="155" width="16" height="145" style="animation-delay:0.52s"/>
-                        <rect class="month-bar" x="406" y="160" width="16" height="140" style="animation-delay:0.56s"/>
-                        <rect class="month-bar" x="430" y="150" width="16" height="150" style="animation-delay:0.6s"/>
-                        <rect class="month-bar" x="454" y="140" width="16" height="160" style="animation-delay:0.64s"/>
-                        <rect class="month-bar" x="478" y="130" width="16" height="170" style="animation-delay:0.68s"/>
-                        <rect class="month-bar" x="502" y="120" width="16" height="180" style="animation-delay:0.72s"/>
-                        <rect class="month-bar" x="526" y="110" width="16" height="190" style="animation-delay:0.76s"/>
-                        <rect class="month-bar" x="550" y="100" width="16" height="200" style="animation-delay:0.8s"/>
-                        <rect class="month-bar" x="574" y="105" width="16" height="195" style="animation-delay:0.84s"/>
-                        <rect class="month-bar" x="598" y="115" width="16" height="185" style="animation-delay:0.88s"/>
-                        <rect class="month-bar" x="622" y="125" width="16" height="175" style="animation-delay:0.92s"/>
-                        <rect class="month-bar" x="646" y="135" width="16" height="165" style="animation-delay:0.96s"/>
-                        <rect class="month-bar" x="670" y="145" width="16" height="155" style="animation-delay:1s"/>
-                        <rect class="month-bar" x="694" y="150" width="16" height="150" style="animation-delay:1.04s"/>
-                        <rect class="month-bar" x="718" y="155" width="16" height="145" style="animation-delay:1.08s"/>
-                        <rect class="month-bar" x="742" y="150" width="16" height="150" style="animation-delay:1.12s"/>
-                        <rect class="month-bar" x="766" y="140" width="16" height="160" style="animation-delay:1.16s"/>
-                    </g>
-                    <g fill="#90caf9" opacity="0.85">
-                        <rect class="month-bar" x="70" y="120" width="16" height="40" style="animation-delay:0s"/>
-                        <rect class="month-bar" x="94" y="115" width="16" height="35" style="animation-delay:0.04s"/>
-                        <rect class="month-bar" x="118" y="115" width="16" height="30" style="animation-delay:0.08s"/>
-                        <rect class="month-bar" x="142" y="95" width="16" height="45" style="animation-delay:0.12s"/>
-                        <rect class="month-bar" x="166" y="85" width="16" height="50" style="animation-delay:0.16s"/>
-                        <rect class="month-bar" x="190" y="75" width="16" height="55" style="animation-delay:0.2s"/>
-                        <rect class="month-bar" x="214" y="85" width="16" height="40" style="animation-delay:0.24s"/>
-                        <rect class="month-bar" x="238" y="85" width="16" height="35" style="animation-delay:0.28s"/>
-                        <rect class="month-bar" x="262" y="85" width="16" height="30" style="animation-delay:0.32s"/>
-                        <rect class="month-bar" x="286" y="85" width="16" height="45" style="animation-delay:0.36s"/>
-                        <rect class="month-bar" x="310" y="85" width="16" height="55" style="animation-delay:0.4s"/>
-                        <rect class="month-bar" x="334" y="85" width="16" height="60" style="animation-delay:0.44s"/>
-                        <rect class="month-bar" x="358" y="100" width="16" height="50" style="animation-delay:0.48s"/>
-                        <rect class="month-bar" x="382" y="110" width="16" height="45" style="animation-delay:0.52s"/>
-                        <rect class="month-bar" x="406" y="120" width="16" height="40" style="animation-delay:0.56s"/>
-                        <rect class="month-bar" x="430" y="115" width="16" height="35" style="animation-delay:0.6s"/>
-                        <rect class="month-bar" x="454" y="110" width="16" height="30" style="animation-delay:0.64s"/>
-                        <rect class="month-bar" x="478" y="90" width="16" height="40" style="animation-delay:0.68s"/>
-                        <rect class="month-bar" x="502" y="75" width="16" height="45" style="animation-delay:0.72s"/>
-                        <rect class="month-bar" x="526" y="60" width="16" height="50" style="animation-delay:0.76s"/>
-                        <rect class="month-bar" x="550" y="45" width="16" height="55" style="animation-delay:0.8s"/>
-                        <rect class="month-bar" x="574" y="55" width="16" height="50" style="animation-delay:0.84s"/>
-                        <rect class="month-bar" x="598" y="70" width="16" height="45" style="animation-delay:0.88s"/>
-                        <rect class="month-bar" x="622" y="85" width="16" height="40" style="animation-delay:0.92s"/>
-                        <rect class="month-bar" x="646" y="100" width="16" height="35" style="animation-delay:0.96s"/>
-                        <rect class="month-bar" x="670" y="115" width="16" height="30" style="animation-delay:1s"/>
-                        <rect class="month-bar" x="694" y="115" width="16" height="35" style="animation-delay:1.04s"/>
-                        <rect class="month-bar" x="718" y="110" width="16" height="40" style="animation-delay:1.08s"/>
-                        <rect class="month-bar" x="742" y="105" width="16" height="45" style="animation-delay:1.12s"/>
-                        <rect class="month-bar" x="766" y="90" width="16" height="50" style="animation-delay:1.16s"/>
-                    </g>
-
-                    <text x="70" y="330" font-size="11" fill="#667">1</text>
-                    <text x="230" y="330" font-size="11" fill="#667">7</text>
-                    <text x="390" y="330" font-size="11" fill="#667">14</text>
-                    <text x="550" y="330" font-size="11" fill="#667">21</text>
-                    <text x="750" y="330" font-size="11" fill="#667">30</text>
-                </svg>
-                <div class="month-legend">
-                    <span><i class="month-dot" style="background:#1a237e;"></i>B2B загрузка</span>
-                    <span><i class="month-dot" style="background:#90caf9;"></i>B2C загрузка</span>
+                <div class="slide-title">B2C: ПАКЕТЫ ДЛЯ ЧАСТНЫХ ГОСТЕЙ</div>
+                <div class="three-columns">
+                    <div class="stat-box">
+                        <div class="stat-number">Базовый</div>
+                        <div class="stat-label">Цель: цифровой детокс и минимальное структурирование времени.</div>
+                        <ul class="compact-list">
+                            <li>Готовый сценарий уикенда с рекомендациями по времени.</li>
+                            <li>Аренда снаряжения для активностей (SUP‑борд или велосипеды).</li>
+                            <li>Приоритетный доступ к партнёрским локациям с условиями.</li>
+                            <li>BBQ‑набор или пикник‑корзина на выбор.</li>
+                        </ul>
+                        <div class="stat-growth">50 000 – 60 000 ₽ за домик на выходные (2 человека).</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">Премиум</div>
+                        <div class="stat-label">Цель: глубокое восстановление по программе с экспертом.</div>
+                        <ul class="compact-list">
+                            <li>Углублённая консультация и индивидуальный план пребывания.</li>
+                            <li>Ежедневные групповые практики у реки.</li>
+                            <li>Один персональный wellness‑сеанс на выбор.</li>
+                            <li>Полный пансион от шефа с опциями питания.</li>
+                            <li>Участие в тематическом воркшопе сезона.</li>
+                        </ul>
+                        <div class="stat-growth">85 000 – 95 000 ₽ за человека за 3‑дневную программу.</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">Максимальный</div>
+                        <div class="stat-label">Цель: полное погружение и измеримый эффект.</div>
+                        <ul class="compact-list">
+                            <li>Полная аренда части/всей территории для приватности.</li>
+                            <li>Индивидуальная программа «под ключ» с партнёрами‑экспертами.</li>
+                            <li>Кураторство от персонального менеджера.</li>
+                            <li>Несколько персональных сессий или корпоративный retreat.</li>
+                            <li>Измеримые показатели до/после и итоговый отчёт.</li>
+                            <li>Приватные гастрономические/культурные активности.</li>
+                            <li>Профессиональная фотосъёмка и памятный альбом.</li>
+                        </ul>
+                        <div class="stat-growth">от 120 000 – 150 000 ₽ за человека (группа 6–10, 3–4 дня).</div>
+                    </div>
                 </div>
+                <div class="highlight-box whitespace">
+                    <div class="section-title" style="margin-bottom: 10px;">Сквозной набор услуг для всех пакетов</div>
+                    <div class="two-columns" style="gap: 20px;">
+                        <ul class="compact-list">
+                            <li>Проживание в комфортабельном шатре/домике с видом на природу.</li>
+                            <li>Приветственный набор (фермерские продукты/напитки).</li>
+                            <li>Доступ к приватной территории на берегу реки.</li>
+                            <li>Консультация на этапе бронирования для базовой персонализации пребывания.</li>
+                        </ul>
+                        <ul class="compact-list">
+                            <li>Книга локальных маршрутов и активностей.</li>
+                            <li>Ненавязчивый сервис (заказ еды в номер, помощь в организации).</li>
+                            <li>Набор для цифрового детокса (бинокль, книги, настольные игры).</li>
+                            <li>Фирменный сувенир при выезде (чай, травы).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над информацией работал: Александр</div>
             </div>
         </div>
 
@@ -2819,145 +2833,6 @@
                     </div>
                 </div>
                 <div class="highlight-box whitespace" style="display: none;"></div>
-            </div>
-        </div>
-
-        <!-- Slide 13: Payback & Profitability -->
-        <div class="slide fit-screen">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">ОКУПАЕМОСТЬ И ДОХОДНОСТЬ</div>
-                <div class="timeline-wrap">
-                    <div class="live-metrics">
-                        <div class="live-metric">
-                            <div class="live-metric-title">Выручка</div>
-                            <div class="live-metric-value" id="live-revenue">30,0 млн</div>
-                        </div>
-                        <div class="live-metric">
-                            <div class="live-metric-title">EBITDA</div>
-                            <div class="live-metric-value" id="live-ebitda">28%</div>
-                        </div>
-                        <div class="live-metric">
-                            <div class="live-metric-title">ROI</div>
-                            <div class="live-metric-value" id="live-roi">20%</div>
-                        </div>
-                    </div>
-                    <svg class="timeline-chart" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" aria-label="График выручки, доходности и окупаемости по годам">
-                        <!-- axes -->
-                        <line x1="80" y1="40" x2="80" y2="340" stroke="#cfd8dc" stroke-width="2"/>
-                        <line x1="80" y1="340" x2="820" y2="340" stroke="#cfd8dc" stroke-width="2"/>
-                        <!-- grid -->
-                        <line x1="80" y1="280" x2="820" y2="280" stroke="#e5e7eb" stroke-dasharray="4 4"/>
-                        <line x1="80" y1="220" x2="820" y2="220" stroke="#e5e7eb" stroke-dasharray="4 4"/>
-                        <line x1="80" y1="160" x2="820" y2="160" stroke="#e5e7eb" stroke-dasharray="4 4"/>
-                        <line x1="80" y1="100" x2="820" y2="100" stroke="#e5e7eb" stroke-dasharray="4 4"/>
-                        <!-- left labels -->
-                        <text x="34" y="344" font-size="12" fill="#667">0</text>
-                        <text x="22" y="284" font-size="12" fill="#667">50</text>
-                        <text x="18" y="224" font-size="12" fill="#667">100</text>
-                        <text x="18" y="164" font-size="12" fill="#667">150</text>
-                        <text x="18" y="104" font-size="12" fill="#667">200</text>
-                        <!-- right labels -->
-                        <text x="832" y="344" font-size="12" fill="#667">0%</text>
-                        <text x="828" y="284" font-size="12" fill="#667">25%</text>
-                        <text x="828" y="224" font-size="12" fill="#667">50%</text>
-                        <text x="828" y="164" font-size="12" fill="#667">75%</text>
-                        <text x="824" y="104" font-size="12" fill="#667">100%</text>
-                        <!-- x labels -->
-                        <text x="110" y="372" font-size="12" fill="#667">Год 1</text>
-                        <text x="270" y="372" font-size="12" fill="#667">Год 2</text>
-                        <text x="430" y="372" font-size="12" fill="#667">Год 3</text>
-                        <text x="590" y="372" font-size="12" fill="#667">Год 4</text>
-                        <text x="750" y="372" font-size="12" fill="#667">Год 5</text>
-
-                        <!-- Revenue line (млн руб.) -->
-                        <polyline class="line" pathLength="100" stroke="#1a237e"
-                            points="120,106 280,92 440,78 600,63 760,48"/>
-                        <circle class="chart-point" cx="120" cy="106" r="6" fill="#1a237e" style="animation-delay: 1.4s;">
-                            <title>Год 1: выручка 156 млн</title>
-                        </circle>
-                        <circle class="chart-point" cx="280" cy="92" r="6" fill="#1a237e" style="animation-delay: 3s;">
-                            <title>Год 2: выручка 165 млн</title>
-                        </circle>
-                        <circle class="chart-point" cx="440" cy="78" r="6" fill="#1a237e" style="animation-delay: 4.6s;">
-                            <title>Год 3: выручка 175 млн</title>
-                        </circle>
-                        <circle class="chart-point" cx="600" cy="63" r="6" fill="#1a237e" style="animation-delay: 6.2s;">
-                            <title>Год 4: выручка 185 млн</title>
-                        </circle>
-                        <circle class="chart-point" cx="760" cy="48" r="6" fill="#1a237e" style="animation-delay: 7.8s;">
-                            <title>Год 5: выручка 195 млн</title>
-                        </circle>
-
-                        <!-- EBITDA margin line (%) -->
-                        <polyline class="line" pathLength="100" stroke="#42a5f5"
-                            points="120,244 280,241 440,238 600,235 760,232"/>
-                        <circle class="chart-point" cx="120" cy="244" r="6" fill="#42a5f5" style="animation-delay: 1.8s;">
-                            <title>Год 1: EBITDA 32%</title>
-                        </circle>
-                        <circle class="chart-point" cx="280" cy="241" r="6" fill="#42a5f5" style="animation-delay: 3.4s;">
-                            <title>Год 2: EBITDA 33%</title>
-                        </circle>
-                        <circle class="chart-point" cx="440" cy="238" r="6" fill="#42a5f5" style="animation-delay: 5s;">
-                            <title>Год 3: EBITDA 34%</title>
-                        </circle>
-                        <circle class="chart-point" cx="600" cy="235" r="6" fill="#42a5f5" style="animation-delay: 6.6s;">
-                            <title>Год 4: EBITDA 35%</title>
-                        </circle>
-                        <circle class="chart-point" cx="760" cy="232" r="6" fill="#42a5f5" style="animation-delay: 8.2s;">
-                            <title>Год 5: EBITDA 36%</title>
-                        </circle>
-
-                        <!-- ROI cumulative line (%) -->
-                        <polyline class="line" pathLength="100" stroke="#ff9800"
-                            points="120,295 280,235 440,160 600,100 760,40"/>
-                        <circle class="chart-point" cx="760" cy="40" r="7" fill="#ff9800" style="animation-delay: 7.2s;">
-                            <title>Точка окупаемости: 5 год</title>
-                        </circle>
-
-                        <g class="callout" style="animation-delay: 0.6s;">
-                            <rect x="95" y="70" width="170" height="48" rx="18" fill="#ffffff" stroke="#dfe5f3"/>
-                            <text x="112" y="92" font-size="12" fill="#1a237e" font-weight="600">Запуск</text>
-                            <text x="112" y="108" font-size="12" fill="#4a5568">первые продажи</text>
-                        </g>
-                        <g class="callout" style="animation-delay: 1.4s;">
-                            <rect x="330" y="70" width="230" height="48" rx="18" fill="#ffffff" stroke="#dfe5f3"/>
-                            <text x="346" y="92" font-size="12" fill="#1a237e" font-weight="600">Выход на проектную мощность</text>
-                            <text x="346" y="108" font-size="12" fill="#4a5568">рост выручки и маржи</text>
-                        </g>
-                        <g class="callout" style="animation-delay: 2.2s;">
-                            <rect x="560" y="180" width="230" height="52" rx="18" fill="#ffffff" stroke="#dfe5f3"/>
-                            <text x="576" y="202" font-size="12" fill="#1a237e" font-weight="600">Окупаемость</text>
-                            <text x="576" y="218" font-size="12" fill="#4a5568">~5 лет, ROI 100%</text>
-                        </g>
-                    </svg>
-                    <div class="payback-burst" aria-hidden="true">
-                        <span></span><span></span><span></span><span></span>
-                        <span></span><span></span><span></span><span></span>
-                    </div>
-                    <div class="timeline-legend">
-                        <span><i class="timeline-dot" style="background:#1a237e;"></i>Выручка, млн руб.</span>
-                        <span><i class="timeline-dot" style="background:#42a5f5;"></i>EBITDA %, маржа</span>
-                        <span><i class="timeline-dot" style="background:#ff9800;"></i>ROI, накопленный</span>
-                    </div>
-                </div>
             </div>
         </div>
 
