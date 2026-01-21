@@ -440,6 +440,73 @@
             grid-template-columns: repeat(2, 1fr);
         }
 
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .swot-card {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(26, 35, 126, 0.1);
+            border-radius: 16px;
+            padding: 18px 18px 16px;
+            box-shadow: var(--soft-shadow);
+        }
+
+        .swot-card.s {
+            border-left: 5px solid #1a237e;
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.08), rgba(255,255,255,0.95));
+        }
+
+        .swot-card.w {
+            border-left: 5px solid #ef5350;
+            background: linear-gradient(135deg, rgba(239, 83, 80, 0.08), rgba(255,255,255,0.95));
+        }
+
+        .swot-card.o {
+            border-left: 5px solid #43a047;
+            background: linear-gradient(135deg, rgba(67, 160, 71, 0.08), rgba(255,255,255,0.95));
+        }
+
+        .swot-card.t {
+            border-left: 5px solid #fb8c00;
+            background: linear-gradient(135deg, rgba(251, 140, 0, 0.1), rgba(255,255,255,0.95));
+        }
+
+        .swot-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .swot-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            gap: 8px;
+        }
+
+        .swot-list li {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .swot-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary);
+            font-size: 18px;
+            line-height: 1;
+        }
+
         .partner-mosaic {
             grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 16px;
@@ -554,12 +621,12 @@
         }
 
         .packages-slide .stat-number {
-            font-size: 24px;
+            font-size: 22px;
         }
 
         .packages-slide .stat-label,
         .packages-slide .stat-growth {
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .packages-slide .key-point {
@@ -572,17 +639,21 @@
         }
 
         .packages-slide .compact-list li {
-            font-size: 11px;
-            line-height: 1.35;
+            font-size: 10px;
+            line-height: 1.3;
         }
 
         .packages-slide .highlight-box {
-            padding: 14px;
+            padding: 10px;
         }
 
         .packages-slide .key-point,
         .packages-slide .key-point p {
             font-size: 14px;
+        }
+
+        .packages-slide .slide-title {
+            font-size: 34px;
         }
 
         .icon-card {
@@ -1980,36 +2051,41 @@
                 </div>
             </div>
             <div class="content">
-                <div class="slide-title">ПРОБЛЕМА РЫНКА ГЛЭМПИНГА</div>
-                <div class="icon-grid">
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Сезонность</div>
-                        <div class="icon-text">Пики по выходным, провалы в будни</div>
+                <div class="slide-title">SWOT‑АНАЛИЗ RIVERPLACE</div>
+                <div class="swot-grid">
+                    <div class="swot-card s">
+                        <div class="swot-title">S — Сильные стороны</div>
+                        <ul class="swot-list">
+                            <li>Локация и природная среда.</li>
+                            <li>Большой список контактов в индустрии.</li>
+                            <li>Проект ещё не построен — можно заложить стратегию в концепцию.</li>
+                        </ul>
                     </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Плохое знание продукта</div>
-                        <div class="icon-text">Глэмпинг не в топ‑of‑mind у аудитории</div>
+                    <div class="swot-card w">
+                        <div class="swot-title">W — Слабые стороны</div>
+                        <ul class="swot-list">
+                            <li>Ограниченный бюджет — 250 млн руб.</li>
+                            <li>Нет сформированной аудитории.</li>
+                            <li>Нет опыта построения похожих проектов и их менеджмента.</li>
+                        </ul>
                     </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Непредсказуемость</div>
-                        <div class="icon-text">Сложно планировать загрузку и выручку</div>
+                    <div class="swot-card o">
+                        <div class="swot-title">O — Возможности</div>
+                        <ul class="swot-list">
+                            <li>Рост внутреннего туризма.</li>
+                            <li>Рост аудитории в wellness‑индустрии.</li>
+                        </ul>
                     </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Дорогой B2C</div>
-                        <div class="icon-text">Высокая стоимость привлечения</div>
+                    <div class="swot-card t">
+                        <div class="swot-title">T — Угрозы</div>
+                        <ul class="swot-list">
+                            <li>Сезонность.</li>
+                            <li>Низкая осведомлённость о формате.</li>
+                            <li>Кадровый голод в РФ.</li>
+                            <li>Высокая конкуренция с отелями.</li>
+                            <li>Очень дорогой B2C‑клиент.</li>
+                        </ul>
                     </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Риск кассовых разрывов</div>
-                        <div class="icon-text">Низкая повторяемость бронирований</div>
-                    </div>
-                </div>
-                <div class="key-point">
-                    <strong>Вывод:</strong> нужна предсказуемая B2B‑загрузка, а не только розничные брони.
                 </div>
             </div>
             <div class="footer">
@@ -2149,7 +2225,7 @@
             </div>
         </div>
 
-        <!-- Slide 3: Strategy -->
+        <!-- Slide 5: Strategy -->
         <div class="slide">
             <div class="header">
                 <div class="logo-section">
@@ -2170,42 +2246,35 @@
                 </div>
             </div>
             <div class="content">
-                <div class="slide-title">СТРАТЕГИЯ: B2B-ПЛАТФОРМА</div>
-                <div class="flow">
-                    <div class="flow-step">Партнер бронирует даты</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">RiverPlace дает площадку</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">Партнер привозит аудиторию</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">Остатки — B2C продажи</div>
-                </div>
-                <div class="icon-grid">
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Календарь 3–6 мес.</div>
-                        <div class="icon-text">Планируем загрузку заранее</div>
+                <div class="slide-title">ПРЕДЛАГАЕМАЯ КОНЦЕПЦИЯ</div>
+                <div class="two-columns">
+                    <div class="section">
+                        <div class="section-title">Суть концепции</div>
+                        <ul class="bullet-list">
+                            <li>Фокус на B2B‑привлечение — 70% загрузки.</li>
+                            <li>B2C‑канал закрывает остатки — 30% загрузки.</li>
+                            <li>Основной акцент на партнёрские программы и сообщества.</li>
+                        </ul>
                     </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Повторяемость</div>
-                        <div class="icon-text">Стабильные партнерские заезды</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Меньше B2C-маркетинга</div>
-                        <div class="icon-text">Аудитория приходит через партнеров</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Контроль качества</div>
-                        <div class="icon-text">Единые стандарты площадки</div>
+                    <div class="section">
+                        <div class="section-title">Плюсы концепции</div>
+                        <ul class="bullet-list">
+                            <li>Не нужно масштабно привлекать B2C‑трафик.</li>
+                            <li>Существует боль у индустрий в поиске и организации площадок.</li>
+                            <li>Снижаем сезонность и загружаем будни программами партнёров.</li>
+                        </ul>
                     </div>
                 </div>
+                <div class="key-point" style="border-left-color:#43a047; background: rgba(67, 160, 71, 0.12);">
+                    <strong>Комментарий:</strong> загрузку и партнёрства можно запускать до стройки, чтобы проверить гипотезу и обойти потенциальных клиентов.
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над слайдом работал Владимир</div>
             </div>
         </div>
 
-        <!-- Slide 4: Partner Criteria -->
+        <!-- Slide 6: Partner Directions -->
         <div class="slide">
             <div class="header">
                 <div class="logo-section">
@@ -2226,36 +2295,41 @@
                 </div>
             </div>
             <div class="content">
-                <div class="slide-title">КТО НАШ ПАРТНЕР</div>
-                <div class="icon-grid">
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Без своей базы</div>
-                        <div class="icon-text">Нет собственной загородной площадки</div>
+                <div class="slide-title">ПРЕДПОЛАГАЕМЫЕ ПАРТНЕРЫ</div>
+                <div class="two-columns">
+                    <div class="section">
+                        <div class="section-title">Направления и примеры компаний</div>
+                        <ul class="bullet-list">
+                            <li><strong>Перформативные практики:</strong> Gogol School.</li>
+                            <li><strong>Йога/дыхание:</strong> Holi Yoga, Wim Hof.</li>
+                            <li><strong>Арт‑практики:</strong> Painty, ZUART.</li>
+                            <li><strong>Керамика/лепка:</strong> Ceramista, SREDA.</li>
+                            <li><strong>Wellness‑сообщества и коучи:</strong> выездные ретриты и программы.</li>
+                        </ul>
+                        <div class="key-point" style="margin-top: 14px;">
+                            Все перечисленные направления проводят выездные мероприятия и нуждаются в площадках и организации.
+                        </div>
                     </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Выездные форматы</div>
-                        <div class="icon-text">Курсы, практики, интенсивы</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Собирают группы</div>
-                        <div class="icon-text">Умеют продавать программу</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Планируют заранее</div>
-                        <div class="icon-text">Бронирование дат по календарю</div>
+                    <div class="section">
+                        <div class="section-title">Почему это выгодно для нас</div>
+                        <ul class="bullet-list">
+                            <li>Могут проводить мероприятия в будни — это повышает загрузку.</li>
+                            <li>У них есть готовая аудитория — не нужно покупать трафик на конкурентном рынке.</li>
+                            <li>На рынке помощь в организации ивентов дают в основном крупные отели, это дорого.</li>
+                            <li>Видим нишу доступной профессиональной организации программ.</li>
+                        </ul>
+                        <div class="key-point" style="margin-top: 14px;">
+                            <strong>Кто наш партнёр:</strong> нет собственной базы, работают в выездных форматах, умеют собирать группы и планируют даты заранее.
+                        </div>
                     </div>
                 </div>
-                <div class="key-point">
-                    <strong>Логика:</strong> мы даем природу, размещение и инфраструктуру; партнер отвечает за программу и аудиторию.
-                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над слайдом работал Владимир</div>
             </div>
         </div>
 
-        <!-- Slide 5: Partner Value -->
+        <!-- Slide 7: B2C Audience -->
         <div class="slide">
             <div class="header">
                 <div class="logo-section">
@@ -2276,33 +2350,40 @@
                 </div>
             </div>
             <div class="content">
-                <div class="slide-title">ЦЕННОСТЬ ДЛЯ ПАРТНЕРОВ</div>
-                <div class="icon-grid">
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1472224371017-08207f84aaae?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Готовая площадка</div>
-                        <div class="icon-text">Природа, проживание, залы</div>
+                <div class="slide-title">ПРЕДПОЛАГАЕМАЯ ЦА RIVERPLACE (B2C)</div>
+                <div class="two-columns">
+                    <div class="section">
+                        <div class="section-title">Сегмент 1 — перегруженные профи 30–45</div>
+                        <ul class="bullet-list">
+                            <li><strong>Кто:</strong> менеджеры, предприниматели; IT/креатив/консалтинг/финансы; Москва/МО (2–3 часа).</li>
+                            <li><strong>Состояние:</strong> хронический стресс, проблемы со сном, высокая когнитивная нагрузка.</li>
+                            <li><strong>Ищут:</strong> восстановление, структурированный формат, доказуемый эффект, минимум быта.</li>
+                            <li><strong>Почему подходит:</strong> фиксированные программы, персонализация, природа как инструмент, язык результата.</li>
+                        </ul>
+                        <div class="key-point" style="margin-top: 10px;">
+                            Главный платёжеспособный сегмент, под него выстроена модель.
+                        </div>
                     </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Быстрый запуск</div>
-                        <div class="icon-text">“Приехал → провел → уехал”</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Маржинальность</div>
-                        <div class="icon-text">Без инвестиций в базу</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Повторяемость</div>
-                        <div class="icon-text">Сезонные форматы и серии</div>
+                    <div class="section">
+                        <div class="section-title">Сегмент 2 — wellness‑ориентированные 28–50</div>
+                        <ul class="bullet-list">
+                            <li><strong>Кто:</strong> аудитория с опытом йоги, медитации, терапии, ретритов (часто женщины).</li>
+                            <li><strong>Важно:</strong> среда, экспертность ведущих, глубина, доверие к методологии.</li>
+                            <li><strong>Как приходят:</strong> через экспертов, партнёров, контент.</li>
+                            <li><strong>Почему подходит:</strong> ретрит‑логика, экспертные партнёрства, программы вместо «ночей».</li>
+                        </ul>
+                        <div class="key-point" style="margin-top: 10px;">
+                            Сегмент усиливает бренд и формирует репутацию.
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="footer">
+                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над слайдом работала Ольга</div>
+            </div>
         </div>
 
-        <!-- Slide 6: RiverPlace Value -->
+        <!-- Slide 8: B2C Scenario -->
         <div class="slide">
             <div class="header">
                 <div class="logo-section">
@@ -2323,102 +2404,34 @@
                 </div>
             </div>
             <div class="content">
-                <div class="slide-title">ЦЕННОСТЬ ДЛЯ RIVERPLACE</div>
-                <div class="icon-grid">
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Планируемая загрузка</div>
-                        <div class="icon-text">Календарь на 3–6 месяцев</div>
+                <div class="slide-title">СЦЕНАРИЙ B2C: «ТИХИЕ ВЫХОДНЫЕ»</div>
+                <div class="two-columns">
+                    <div class="section">
+                        <div class="section-title">Этапы сценария</div>
+                        <ul class="bullet-list">
+                            <li><strong>Обнаружение:</strong> поиск «комфортный отдых у реки», переход на сценарии.</li>
+                            <li><strong>Планирование:</strong> готовый маршрут, опции (BBQ, йога, SUP, локальные партнёры).</li>
+                            <li><strong>На территории:</strong> предсказуемость, детокс‑набор, локальные маршруты, ненавязчивый сервис.</li>
+                            <li><strong>Завершение:</strong> сувенир, письмо с фото, приглашение на тематические заезды.</li>
+                        </ul>
                     </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Ровные будни</div>
-                        <div class="icon-text">Снижение сезонных провалов</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Аудитория партнера</div>
-                        <div class="icon-text">Новый приток без B2C‑расходов</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">LTV и репутация</div>
-                        <div class="icon-text">Повторяемость сильных форматов</div>
+                    <div class="section">
+                        <div class="section-title">Принципы RiverPlace</div>
+                        <ul class="bullet-list">
+                            <li>Продаём восстановительный опыт, а не «дом».</li>
+                            <li>Сценарии вместо «ночей» — под разные сегменты.</li>
+                            <li>Сезонность снижается через тематические программы и B2B‑заезды.</li>
+                            <li>Коммуникация на языке потребностей: «перезагрузка», «качественное время».</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+            <div class="footer">
+                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над слайдом работала Ксения</div>
             </div>
         </div>
 
-        <!-- Slide 7: Infrastructure -->
-        <div class="slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">ЧТО ПРОДАЕМ</div>
-                <div class="icon-grid">
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Природа</div>
-                        <div class="icon-text">Река, лес, приватность</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Размещение</div>
-                        <div class="icon-text">Проживание для групп</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Залы</div>
-                        <div class="icon-text">Практики, лекции, работа</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Кейтеринг</div>
-                        <div class="icon-text">Кухня и питание под формат</div>
-                    </div>
-                </div>
-                <div class="icon-grid">
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Баня/SPA</div>
-                        <div class="icon-text">Телесные практики</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Техника</div>
-                        <div class="icon-text">Звук, проектор, свет</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Маршруты</div>
-                        <div class="icon-text">Прогулки, медитация</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Логистика</div>
-                        <div class="icon-text">Трансфер по запросу</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 8: Channels -->
+        <!-- Slide 9: Channels -->
         <div class="slide">
             <div class="header">
                 <div class="logo-section">
@@ -2483,11 +2496,11 @@
                 </div>
             </div>
             <div class="footer">
-                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над информацией работали: Евгений, Дария</div>
+                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над слайдами работали Дария и Евгений</div>
             </div>
         </div>
 
-        <!-- Slide 9: Launch Strategy -->
+        <!-- Slide 10: Launch Strategy -->
         <div class="slide">
             <div class="header">
                 <div class="logo-section">
@@ -2538,11 +2551,11 @@
                 </div>
             </div>
             <div class="footer">
-                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над информацией работали: Евгений, Дария</div>
+                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над слайдами работали Дария и Евгений</div>
             </div>
         </div>
 
-        <!-- Slide 10: Promotion & Partnerships -->
+        <!-- Slide 11: Promotion & Partnerships -->
         <div class="slide">
             <div class="header">
                 <div class="logo-section">
@@ -2600,118 +2613,11 @@
                 </div>
             </div>
             <div class="footer">
-                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над информацией работали: Евгений, Дария</div>
+                <div class="footer-title" style="color: #9aa0a6; font-size: 12px;">Над слайдами работали Дария и Евгений</div>
             </div>
         </div>
 
-        <!-- Slide 8: Product Packages -->
-        <div class="slide fit-screen packages-slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">ПАКЕТЫ ДЛЯ ПАРТНЕРОВ</div>
-                <div class="three-columns">
-                    <div class="stat-box">
-                        <div class="stat-number">Day</div>
-                        <div class="stat-label">Однодневный формат</div>
-                        <div class="stat-growth">Зал + инфраструктура</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">Weekend</div>
-                        <div class="stat-label">2–3 дня с проживанием</div>
-                        <div class="stat-growth">Retreat / практика</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">Camp</div>
-                        <div class="stat-label">4–7 дней</div>
-                        <div class="stat-growth">Интенсивы и курсы</div>
-                    </div>
-                </div>
-                <div class="key-point" style="margin-top: 20px;">
-                    <strong>Формула:</strong> фикс за площадку + размещение + опции (баня, питание, техника).
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 9: Go-to-market -->
-        <div class="slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">КАНАЛЫ ПРОДАЖ И ЗАГРУЗКА</div>
-                <div class="two-columns">
-                    <div class="section">
-                        <div class="section-title">B2B: прямые продажи партнёрам</div>
-                        <div class="icon-grid two-columns-grid">
-                            <div class="icon-card">
-                                <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=200&q=80');"></div>
-                                <div class="icon-title">Прямые продажи</div>
-                                <div class="icon-text">Корпоративы, HR‑департаменты</div>
-                            </div>
-                            <div class="icon-card">
-                                <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=200&q=80');"></div>
-                                <div class="icon-title">Партнерские рекомендации</div>
-                                <div class="icon-text">Эксперты и институты влияния</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section">
-                        <div class="section-title">B2C: прямые каналы</div>
-                        <div class="icon-grid two-columns-grid">
-                            <div class="icon-card">
-                                <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=200&q=80');"></div>
-                                <div class="icon-title">Авито</div>
-                                <div class="icon-text">Спрос на короткие заезды</div>
-                            </div>
-                            <div class="icon-card">
-                                <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=200&q=80');"></div>
-                                <div class="icon-title">Яндекс.Путешествия</div>
-                                <div class="icon-text">Поиск отдыха и ретритов</div>
-                            </div>
-                            <div class="icon-card">
-                                <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
-                                <div class="icon-title">Социальные сети</div>
-                                <div class="icon-text">Контент и личные рекомендации</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 10: B2C Packages -->
+        <!-- Slide 12: Product Packages -->
         <div class="slide packages-slide">
             <div class="header">
                 <div class="logo-section">
@@ -2795,234 +2701,7 @@
             </div>
         </div>
 
-        <!-- Slide 10: Partner List (Single Slide) -->
-        <div class="slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">ПАРТНЕРСКИЕ КАТЕГОРИИ (50+)</div>
-                <div class="icon-grid partner-mosaic">
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Тело/психика/перформанс</div>
-                        <div class="icon-text">~8 партнеров: Gogol School, Authentic Movement</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Йога/дыхание/медитация</div>
-                        <div class="icon-text">~9 партнеров: Holi Yoga, Wim Hof</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Арт‑практики</div>
-                        <div class="icon-text">~10 партнеров: Painty, ZUART</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Керамика/лепка</div>
-                        <div class="icon-text">~8 партнеров: Ceramista, SREDA</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Психология/развитие</div>
-                        <div class="icon-text">~8 партнеров: гештальт, IFS</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Гибридные форматы</div>
-                        <div class="icon-text">~7 партнеров: well‑being, slow life</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Корпоративы/HR</div>
-                        <div class="icon-text">Творческие выходные, командные ретриты</div>
-                    </div>
-                    <div class="icon-card">
-                        <div class="icon-photo" style="background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=200&q=80');"></div>
-                        <div class="icon-title">Авторские ретриты</div>
-                        <div class="icon-text">1–2 ведущих, высокие чеки</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 16: Monetization -->
-        <div class="slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">МОНЕТИЗАЦИЯ И ОСТАТОЧНЫЕ МОЩНОСТИ</div>
-                <div class="two-columns">
-                    <div class="section">
-                        <div class="section-title">Основной доход</div>
-                        <ul class="bullet-list">
-                            <li>Фикс за площадку + проживание участников</li>
-                            <li>Дополнительные услуги: питание, баня, техника</li>
-                            <li>Повторные заезды от сильных партнеров</li>
-                            <li>Сезонные пакеты с предоплатой</li>
-                        </ul>
-                    </div>
-                    <div class="section">
-                        <div class="section-title">Продажа остатков</div>
-                        <ul class="bullet-list">
-                            <li>Свободные даты продаем как “проживание”</li>
-                            <li>Доступные каналы: Авито, Яндекс.Путешествия, Островок</li>
-                            <li>Короткие заезды и last-minute предложения</li>
-                            <li>Поддержка базовой узнаваемости бренда</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="highlight-box" style="margin-top: 20px;">
-                    <p><strong>Итог:</strong> B2B-коллаборации обеспечивают равномерную загрузку, а B2C-продажи закрывают остатки.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 11: Financial Assumptions -->
-        <div class="slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">ФИНАНСОВАЯ МОДЕЛЬ: ПРЕДПОСЫЛКИ</div>
-                <div class="four-columns">
-                    <div class="metric-card">
-                        <div class="metric-title">Вместимость</div>
-                        <div class="metric-number">20 мест</div>
-                        <div class="metric-note">Постоянная база размещения</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">Средний чек</div>
-                        <div class="metric-number">32 500 руб</div>
-                        <div class="metric-note">За человека/ночь</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">Загрузка</div>
-                        <div class="metric-number">55%</div>
-                        <div class="metric-note">Среднегодовая</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">Доп. услуги</div>
-                        <div class="metric-number">+20%</div>
-                        <div class="metric-note">К выручке проживания</div>
-                    </div>
-                </div>
-                <div class="two-columns" style="margin-top: 20px;">
-                    <div class="section">
-                        <div class="section-title">Инвестиции и OPEX</div>
-                        <ul class="bullet-list">
-                            <li>Capex: 250 млн руб. (земля, домики, инфраструктура)</li>
-                            <li>OPEX: 68% выручки (персонал, содержание, маркетинг)</li>
-                        </ul>
-                    </div>
-                    <div class="section">
-                        <div class="section-title">Формула выручки</div>
-                        <ul class="bullet-list">
-                            <li>20 × 365 × 55% = 4 015 ночей</li>
-                            <li>4 015 × 32 500 = 130,5 млн руб.</li>
-                            <li>Доп. услуги +20% = 156,6 млн руб./год</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 12: Revenue, EBITDA, ROI by Years -->
-        <div class="slide">
-            <div class="header">
-                <div class="logo-section">
-                    <div class="logo-circle">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="50" fill="#1a237e"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="45" font-weight="bold" fill="white" text-anchor="middle">В</text>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        ВЫСШАЯ<br>ШКОЛА<br>ЭКОНОМИКИ
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="header-text">Программа МВА</div>
-                    <div class="header-divider"></div>
-                    <div class="header-text">Москва 2026</div>
-                </div>
-            </div>
-            <div class="content">
-                <div class="slide-title">ФИНАНСОВЫЕ РЕЗУЛЬТАТЫ (КРАТКО)</div>
-                <div class="four-columns">
-                    <div class="metric-card">
-                        <div class="metric-title">Выручка, год 1</div>
-                        <div class="metric-number">156 млн</div>
-                        <div class="metric-note">Рост до 195 млн к году 5</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">EBITDA, год 1</div>
-                        <div class="metric-number">32%</div>
-                        <div class="metric-note">Маржа до 36% к году 5</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">Окупаемость</div>
-                        <div class="metric-number">≈ 5 лет</div>
-                        <div class="metric-note">По накопленному ROI</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-title">ROI, год 5</div>
-                        <div class="metric-number">100%</div>
-                        <div class="metric-note">Цель устойчивости</div>
-                    </div>
-                </div>
-                <div class="highlight-box whitespace" style="display: none;"></div>
-            </div>
-        </div>
-
-        <!-- Slide 14: Final Conclusions -->
+        <!-- Slide 13: Final Conclusions -->
         <div class="slide">
             <div class="header">
                 <div class="logo-section">
@@ -3045,16 +2724,16 @@
             <div class="content">
                 <div class="slide-title">ИТОГОВЫЕ ВЫВОДЫ</div>
                 <ul class="bullet-list">
-                    <li><strong>Анализ рынка:</strong> высокая сезонность и перегрев B2C требуют устойчивой B2B‑загрузки</li>
-                    <li><strong>Концепция:</strong> платформа коллабораций с партнерами без собственной базы</li>
-                    <li><strong>Финансовые показатели:</strong> выручка 156,6 млн руб./год при загрузке 55%</li>
-                    <li><strong>Окупаемость:</strong> 5 лет при Capex 250 млн</li>
-                    <li><strong>EBITDA %:</strong> 32% (≈ 50 млн руб./год)</li>
+                    <li><strong>Рынок и спрос:</strong> перегрев B2C и сезонность требуют устойчивой B2B‑загрузки; спрос формируется через знакомые категории и растущий интерес к устойчивому туризму.</li>
+                    <li><strong>ЦА:</strong> B2C — перегруженные профи и wellness‑ориентированные; B2B — HR/корпоративы и институты влияния; не ЦА — массовый бюджетный сегмент.</li>
+                    <li><strong>Стратегия:</strong> B2B‑платформа с партнёрами и контролем качества, остатки — B2C.</li>
+                    <li><strong>Продукт:</strong> линейка B2C‑пакетов и сценарии отдыха с единым набором услуг.</li>
+                    <li><strong>Продвижение:</strong> диверсифицированные каналы, поэтапный запуск и партнёрская экосистема как ключевой драйвер.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Slide 15: Final Scene -->
+        <!-- Slide 14: Final Scene -->
         <div class="slide fit-screen final-scene">
             <div class="header">
                 <div class="logo-section">
@@ -3086,7 +2765,7 @@
     </div>
 
     <div class="slide-counter">
-        <span id="current-slide">1</span> / 18
+        <span id="current-slide">1</span> / 14
     </div>
     <!-- Updated: 2026-01-18 - Возвращен Wordstat и обновлен титульный -->
 
